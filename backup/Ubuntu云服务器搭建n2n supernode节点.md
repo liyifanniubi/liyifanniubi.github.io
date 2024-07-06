@@ -45,7 +45,7 @@ supernode -p xxxx -M -f
 
 出现`supernode started`代表成功运行:
 
-`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1633:/7da9ed5e1a06142e6f41ced433a0a7e.png"`
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1633:/7da9ed5e1a06142e6f41ced433a0a7e.png" width="100%"`
 
 ### 3. 自定义配置（可选）
 **supernode附加参数:**
@@ -74,7 +74,7 @@ supernode -p xxxx -M -f -a 192.168.10.0-192.168.10.0/24
 
 例：
 
-![image](https://github.com/woshinengdiea/woshinengdiea.github.io/assets/105039694/b2d4bdc0-a7e9-4c66-9191-879579783867)
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1634:/5ff8c45a87e067054333c7815865cdd.png" width="100%"`
 
 ```
 supernode -p xxxx -M -f -c /etc/n2n/community.list
@@ -91,7 +91,7 @@ supernode -p xxxx -M -f -a 192.168.10.0-192.168.10.0/24 -c /etc/n2n/community.li
 
 在确保程序正常运行后，按`ctrl+A+D`热键，把n2n的screen放入后台运行，然后可以关闭远程连接，大功告成
 
-![image](https://github.com/woshinengdiea/woshinengdiea.github.io/assets/105039694/7976a0f0-6478-4c76-b5e2-9f72c00094cc)
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1635:/1676964542408182.jpg" width="100%"`
 
 
 ## [#以下是n2n windows客户端的简单使用方法](https://bugxia.com/525.html)
@@ -104,18 +104,19 @@ supernode -p xxxx -M -f -a 192.168.10.0-192.168.10.0/24 -c /etc/n2n/community.li
 > [!IMPORTANT]
 > 杀毒软件可能会误报，需添加白名单
 
-![image](https://github.com/woshinengdiea/woshinengdiea.github.io/assets/105039694/9c3a2b67-5922-471c-859c-b5d66ba4e027)
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1636:/54152bd1db2b6a8fc5f737c37fbb19c.png" width="100%"`
 
 ### 2. 双击n2n.exe打开（确保n2n以管理员权限运行）
 初次运行时，启动器会自动安装所需要的虚拟网卡驱动
 
-![image](https://github.com/woshinengdiea/woshinengdiea.github.io/assets/105039694/39597861-c4e1-4b84-ba34-8c439b457b2f)
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1637:/11ffae4dae22fd2971540ad5fc28b84.png" width="100%"`
 
 
 >注：安装驱动时如果出现Windows安全提示，请信任即可
 
 ### 3. 填入信息
-![image](https://github.com/woshinengdiea/woshinengdiea.github.io/assets/105039694/fbaac931-7be5-4014-a247-b3957948fe73)
+
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1638:/febadd9b57cb9d34c39b3b7387f5d4e.png" width="100%"`
 
 - **服务器**：填入supernode所在服务器的`ip:端口`或者`域名:端口`（如果有域名）
 - **虚拟网ip**：随意，但是需要互连的客户端需使用相同的网段，如：`192.168.10.3`和`192.168.10.23`，如果设置了自动分配虚拟ip，则可以勾选自动分配！
@@ -125,19 +126,19 @@ supernode -p xxxx -M -f -a 192.168.10.0-192.168.10.0/24 -c /etc/n2n/community.li
 
 - **第一步**：点击测试工具
 
-![image](https://github.com/woshinengdiea/woshinengdiea.github.io/assets/105039694/2e383200-7b26-4369-aa89-91eaa92c46fa)
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1639:/c220b67045b14f3e9ad19edba538b76.png" width="100%"`
 
 - **第二步**：点击关闭防火墙，并确定
 
-![image](https://github.com/woshinengdiea/woshinengdiea.github.io/assets/105039694/69d21f28-1bc6-4991-8ba3-3ee2bc6627d2)
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1640:/fce6a201dcac82616aa6287f5add76f.png" width="100%"`
 
 - **第三步**：点击启动
 
-![image](https://github.com/woshinengdiea/woshinengdiea.github.io/assets/105039694/6d03c78e-07fd-4500-aa2b-a1ad540ed83b)
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1641:/911b86f147554be94e643eca5487e19.png" width="100%"`
 
 ## 服务器右侧出现绿色小勾代表连接成功
 
-![image](https://github.com/woshinengdiea/woshinengdiea.github.io/assets/105039694/80dbf8ba-e4b6-42eb-a3cf-980589ecf193)
+`Gmeek-html<img src="https://storage.live.com/items/41E437E1D88C63B7!1642:/930b90660a6e3433a3d4593a8428992.png" width="100%"`
 
 ### 现在可以ping其他客户端的虚拟ip试试了^_^
 
