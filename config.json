@@ -1,6 +1,17 @@
 {
-    "title":"Blog Title",
-    "subTitle":"Blog description",
-    "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
+    "title":"LIYIFAN的备忘录",
+    "subTitle":"❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️",
+    "displayTitle":"LIYIFAN",
+    "avatarUrl":"https://avatars.githubusercontent.com/u/105039694?v=4",
+    "homeUrl":"https://blog.liyifans.xyz",
+    "startSite":"07/03/2024",
+    "onePageListNum":20,
+    "commentLabelColor":"#006b75",
+    "yearColorList":["#bc4c00", "#0969da", "#1f883d", "#A333D0"],
+    "i18n":"CN",
+    "nightTheme":"dark_dimmed",
+    "dayTheme":"light_tritanopia ",
+    "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
+    "showPostSource":0,
     "GMEEK_VERSION":"last"
 }
