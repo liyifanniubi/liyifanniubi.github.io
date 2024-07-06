@@ -102,7 +102,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>-f前台运行，-M避免短时间内多次连接MAC地址未释放的问题</p>
 </blockquote>
 <p>出现<code class="notranslate">supernode started</code>代表成功运行:</p>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1633:/7da9ed5e1a06142e6f41ced433a0a7e.png" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/c10ecf4a22b4bc0e6de32.png" width="100%"</p>
 <h3>3. 自定义配置（可选）</h3>
 <p><strong>supernode附加参数:</strong></p>
 <pre class="notranslate"><code class="notranslate">-p 端口 | Supernode监听端口，默认 7654
@@ -134,7 +134,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ul>
 <p>需要创建一个<code class="notranslate">community.list</code>文件，并且包含一行一个的白名单组名称</p>
 <p>例：</p>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1634:/5ff8c45a87e067054333c7815865cdd.png" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/c10bac24329f596b716cb.png" width="100%"</p>
 <pre class="notranslate"><code class="notranslate">supernode -p xxxx -M -f -c /etc/n2n/community.list
 </code></pre>
 <blockquote>
@@ -145,22 +145,22 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </code></pre>
 <h2>三、结束</h2>
 <p>在确保程序正常运行后，按<code class="notranslate">ctrl+A+D</code>热键，把n2n的screen放入后台运行，然后可以关闭远程连接，大功告成</p>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1635:/1676964542408182.jpg" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/d1a93a736cdf7364723fd.jpg" width="100%"</p>
 <h2><a href="https://bugxia.com/525.html" rel="nofollow">#以下是n2n windows客户端的简单使用方法</a></h2>
 <p><strong>虽然n2n官方不提供 Windows 编译版本，没有官方图形界面，但我们有自己的大佬！</strong></p>
 <h3>1.下载客户端压缩包并解压</h3>
 <p><a href="https://bugxia.com/357.html" rel="nofollow">EasyN2N</a></p>
 <div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>杀毒软件可能会误报，需添加白名单</p>
 </div>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1636:/54152bd1db2b6a8fc5f737c37fbb19c.png" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/3168ef76584b58778f46b.png" width="100%"</p>
 <h3>2. 双击n2n.exe打开（确保n2n以管理员权限运行）</h3>
 <p>初次运行时，启动器会自动安装所需要的虚拟网卡驱动</p>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1637:/11ffae4dae22fd2971540ad5fc28b84.png" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/e8512689f0dd436f0f8e0.png" width="100%"</p>
 <blockquote>
 <p>注：安装驱动时如果出现Windows安全提示，请信任即可</p>
 </blockquote>
 <h3>3. 填入信息</h3>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1638:/febadd9b57cb9d34c39b3b7387f5d4e.png" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/0da5e82c6507faf143936.png" width="100%"</p>
 <ul>
 <li><strong>服务器</strong>：填入supernode所在服务器的<code class="notranslate">ip:端口</code>或者<code class="notranslate">域名:端口</code>（如果有域名）</li>
 <li><strong>虚拟网ip</strong>：随意，但是需要互连的客户端需使用相同的网段，如：<code class="notranslate">192.168.10.3</code>和<code class="notranslate">192.168.10.23</code>，如果设置了自动分配虚拟ip，则可以勾选自动分配！</li>
@@ -170,17 +170,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <ul>
 <li><strong>第一步</strong>：点击测试工具</li>
 </ul>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1639:/c220b67045b14f3e9ad19edba538b76.png" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/77a76fffbed0f76bb9a6b.png" width="100%"</p>
 <ul>
 <li><strong>第二步</strong>：点击关闭防火墙，并确定</li>
 </ul>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1640:/fce6a201dcac82616aa6287f5add76f.png" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/8d1151d3f4835cdd32f7e.png" width="100%"</p>
 <ul>
 <li><strong>第三步</strong>：点击启动</li>
 </ul>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1641:/911b86f147554be94e643eca5487e19.png" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/6c63e15bce039124da18f.png" width="100%"</p>
 <h2>服务器右侧出现绿色小勾代表连接成功</h2>
-<p><img src="https://storage.live.com/items/41E437E1D88C63B7!1642:/930b90660a6e3433a3d4593a8428992.png" width="100%"</p>
+<p><img src="https://img-5yy.pages.dev/file/5fb43167d3758bfce157f.png" width="100%"</p>
 <h3>现在可以ping其他客户端的虚拟ip试试了^_^</h3>
 <div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>连接正常，但是ping不通的情况下，可以尝试更换虚拟ip网段，比如：从<code class="notranslate">192.168.10.x</code>替换为<code class="notranslate">172.28.2.x</code></p>
 </div></div>
