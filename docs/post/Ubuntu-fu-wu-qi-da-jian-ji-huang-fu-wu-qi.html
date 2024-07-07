@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark_dimmed" data-light-theme="light_tritanopia " lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/105039694?v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="周末闲的蛋疼，搞个饥荒服务器和朋友耍耍
+
+> 环境：Ubuntu 22.04 server 64bit云服务器，root用户
+
+## 一、安装依赖项
+
+```
+add-apt-repository multiverse
+dpkg --add-architecture i386
+apt update
+apt install libstdc++6 libgcc1 libcurl4-gnutls-dev:i386 lib32z1
+```
+
+## 二、安装服务端
+
+### 1. 安装，启动`steamcmd`
+
+```
+mkdir ~/steamcmd
+cd ~/steamcmd
+wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz 
+tar -xvzf steamcmd_linux.tar.gz         #解压
+./steamcmd.sh
+```
+> 等待更新，直到出现`steam>`
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/8ccc538464f59a848ae23.png' width='100%'>`
+
+### 2. 下载饥荒服务端
+
+>在`steam>`后输入命令
+```
+login anonymous
+force_install_dir ../dontstarvetogether_dedicated_server
+app_update 343050
+```
+
+> [!CAUTION]
+> `app_update`不要加入`validate`参数
+
+耐心等待下载完成
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/4b7083b4de7bf47de8809.png' width='100%'>`
+
+~~太慢了太慢了真的太慢了~~ T^T
+
+下载完成后输入`quit`退出`steamcmd`
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/e8e0f2029cf50830509b0.png' width='100%'>`
+
+### 3. 创建饥荒存档目录
+
+```
+mkdir -p ~/.klei/DoNotStarveTogether/Cluster_1
+```
+
+
+## 三、 生成存档
+
+### 1. 打开`steam`中的`饥荒`
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/49abb3beda1f0f72027d2.png' width='100%'>`
+
+### 2. 订阅mod（可选）
+
+> 开加速器
+
+在饥荒创意工坊选择mod并订阅
+
+### 3. 创建世界
+
+点击`创建游戏`→`创建新世界`→按照要求调整难度和规则→点击`模组`，勾选所有需要的mod→点击生成世界
+
+> [!TIP]
+> mod可能会有兼容性问题，如果一直开者无法生成世界，可以一一排查出有问题的mod删除
+
+### 4. 进入选人界面后退回主界面
+
+### 5. 点击`创建游戏`→ 点击刚刚创建世界右侧的扳手图标→ 点击打开世界文件夹
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/83b5b58677d1c30f5cbdc.png' width='100%'>`
+
+
+
+
+
+## 四、获取token和配置
+
+### 1. 进入[Klei官网](https://accounts.klei.com/login)
+
+https://accounts.klei.com/login
+
+选择steam登录
+
+### 2. 选择`游戏`进入饥荒服务器界面
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/ff61aaf485279aeb55023.png' width='100%'>`
+
+### 3. 新建服务器，进入配置界面
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/57d6f5cee5a2edd74411a.png' width='100%'>`
+
+### 4. 填好信息后点击下载设置
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/2c9039d271f30fc64f487.png' width='100%'>`
+
+下载完成后打开压缩包
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/71a2d42329a53650c4530.png' width='100%'>`
+
+
+## 五、上传存档
+
+### 1. 替换配置文件
+
+把压缩包中`cluster.ini`,`cluster_token.txt`,`Cave`文件夹中的`server.ini`,`Master`文件夹中的`server.ini`替换到`步骤三中打开的存档文件夹`中的相同位置
+
+### 2. 打开[FileZilla](https://filezilla-project.org/)
+
+> https://filezilla-project.org/
+
+### 3. 远程sftp连接服务器
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/8baf7f166f0d1c7dce591.png' width='100%'>`
+
+### 4. 把`本地存档文件夹`中的文件上传到`云服务器存档文件夹`中
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/5b6eeacec9c8cc3acd148.png' width='100%'>`
+
+> 拖拽进去！！
+
+> [!NOTE]
+> 如果添加了mod，需要把mod的代码添加进`~/dontstarvetogether_dedicated_server/mods/dedicated_server_mods_setup.lua`
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/5d6de16f0b40b6badd8f0.png' width='100%'>`
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/e64c38db8901f73232689.png' width='100%'>`
+mod代码可以从`本地存档文件夹/Master/modoverrides.lua`中找到！！
+
+
+
+
+## 六、创建启动脚本并运行
+
+```
+cd ~
+vim jihuang.sh
+```
+
+按`任意字母键`后输入：
+
+```
+#!/bin/bash
+
+steamcmd_dir='$HOME/steamcmd'
+install_dir='$HOME/dontstarvetogether_dedicated_server'
+cluster_name='MyDediServer'
+dontstarve_dir='$HOME/.klei/DoNotStarveTogether'
+
+function fail()
+{
+	echo Error: '$@' >&2
+	exit 1
+}
+
+function check_for_file()
+{
+	if [ ! -e '$1' ]; then
+		fail 'Missing file: $1'
+	fi
+}
+
+cd '$steamcmd_dir' || fail 'Missing $steamcmd_dir directory!'
+
+check_for_file 'steamcmd.sh'
+check_for_file '$dontstarve_dir/$cluster_name/cluster.ini'
+check_for_file '$dontstarve_dir/$cluster_name/cluster_token.txt'
+check_for_file '$dontstarve_dir/$cluster_name/Master/server.ini'
+check_for_file '$dontstarve_dir/$cluster_name/Caves/server.ini'
+
+./steamcmd.sh +force_install_dir '$install_dir' +login anonymous +app_update 343050 validate +quit
+
+check_for_file '$install_dir/bin64'
+
+cd '$install_dir/bin64' || fail
+
+run_shared=(./dontstarve_dedicated_server_nullrenderer_x64)
+run_shared+=(-console)
+run_shared+=(-cluster '$cluster_name')
+run_shared+=(-monitor_parent_process $$)
+
+'${run_shared[@]}' -shard Caves  | sed 's/^/Caves:  /' &
+'${run_shared[@]}' -shard Master | sed 's/^/Master: /'
+```
+
+按`esc`后输入`:wq`保存脚本
+
+给可执行权限
+```
+chmod u+x ~/jihuang.sh
+```
+
+### 最后，启动脚本
+
+```
+screen -S jihuang
+~/jihuang.sh
+```
+
+成功运行后按`ctrl+A+D`热键，放入后台运行
+
+> [!IMPORTANT]
+> 在服务器防火墙或安全组里放行`11000`,`11001`,`10889`端口的udp协议
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/781620cb24d35c0d81fb7.png' width='100%'>`
+
+## ~~不出意外的话~~，这服务器就~~可算~~搭建完成了！
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/9128077c76906dfe1ec3e.jpg' width='100%'>`
+
+
+
+
+
+
+
+
+
+
+。">
+<meta property="og:title" content="Ubuntu服务器搭建饥荒服务器">
+<meta property="og:description" content="周末闲的蛋疼，搞个饥荒服务器和朋友耍耍
+
+> 环境：Ubuntu 22.04 server 64bit云服务器，root用户
+
+## 一、安装依赖项
+
+```
+add-apt-repository multiverse
+dpkg --add-architecture i386
+apt update
+apt install libstdc++6 libgcc1 libcurl4-gnutls-dev:i386 lib32z1
+```
+
+## 二、安装服务端
+
+### 1. 安装，启动`steamcmd`
+
+```
+mkdir ~/steamcmd
+cd ~/steamcmd
+wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz 
+tar -xvzf steamcmd_linux.tar.gz         #解压
+./steamcmd.sh
+```
+> 等待更新，直到出现`steam>`
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/8ccc538464f59a848ae23.png' width='100%'>`
+
+### 2. 下载饥荒服务端
+
+>在`steam>`后输入命令
+```
+login anonymous
+force_install_dir ../dontstarvetogether_dedicated_server
+app_update 343050
+```
+
+> [!CAUTION]
+> `app_update`不要加入`validate`参数
+
+耐心等待下载完成
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/4b7083b4de7bf47de8809.png' width='100%'>`
+
+~~太慢了太慢了真的太慢了~~ T^T
+
+下载完成后输入`quit`退出`steamcmd`
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/e8e0f2029cf50830509b0.png' width='100%'>`
+
+### 3. 创建饥荒存档目录
+
+```
+mkdir -p ~/.klei/DoNotStarveTogether/Cluster_1
+```
+
+
+## 三、 生成存档
+
+### 1. 打开`steam`中的`饥荒`
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/49abb3beda1f0f72027d2.png' width='100%'>`
+
+### 2. 订阅mod（可选）
+
+> 开加速器
+
+在饥荒创意工坊选择mod并订阅
+
+### 3. 创建世界
+
+点击`创建游戏`→`创建新世界`→按照要求调整难度和规则→点击`模组`，勾选所有需要的mod→点击生成世界
+
+> [!TIP]
+> mod可能会有兼容性问题，如果一直开者无法生成世界，可以一一排查出有问题的mod删除
+
+### 4. 进入选人界面后退回主界面
+
+### 5. 点击`创建游戏`→ 点击刚刚创建世界右侧的扳手图标→ 点击打开世界文件夹
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/83b5b58677d1c30f5cbdc.png' width='100%'>`
+
+
+
+
+
+## 四、获取token和配置
+
+### 1. 进入[Klei官网](https://accounts.klei.com/login)
+
+https://accounts.klei.com/login
+
+选择steam登录
+
+### 2. 选择`游戏`进入饥荒服务器界面
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/ff61aaf485279aeb55023.png' width='100%'>`
+
+### 3. 新建服务器，进入配置界面
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/57d6f5cee5a2edd74411a.png' width='100%'>`
+
+### 4. 填好信息后点击下载设置
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/2c9039d271f30fc64f487.png' width='100%'>`
+
+下载完成后打开压缩包
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/71a2d42329a53650c4530.png' width='100%'>`
+
+
+## 五、上传存档
+
+### 1. 替换配置文件
+
+把压缩包中`cluster.ini`,`cluster_token.txt`,`Cave`文件夹中的`server.ini`,`Master`文件夹中的`server.ini`替换到`步骤三中打开的存档文件夹`中的相同位置
+
+### 2. 打开[FileZilla](https://filezilla-project.org/)
+
+> https://filezilla-project.org/
+
+### 3. 远程sftp连接服务器
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/8baf7f166f0d1c7dce591.png' width='100%'>`
+
+### 4. 把`本地存档文件夹`中的文件上传到`云服务器存档文件夹`中
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/5b6eeacec9c8cc3acd148.png' width='100%'>`
+
+> 拖拽进去！！
+
+> [!NOTE]
+> 如果添加了mod，需要把mod的代码添加进`~/dontstarvetogether_dedicated_server/mods/dedicated_server_mods_setup.lua`
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/5d6de16f0b40b6badd8f0.png' width='100%'>`
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/e64c38db8901f73232689.png' width='100%'>`
+mod代码可以从`本地存档文件夹/Master/modoverrides.lua`中找到！！
+
+
+
+
+## 六、创建启动脚本并运行
+
+```
+cd ~
+vim jihuang.sh
+```
+
+按`任意字母键`后输入：
+
+```
+#!/bin/bash
+
+steamcmd_dir='$HOME/steamcmd'
+install_dir='$HOME/dontstarvetogether_dedicated_server'
+cluster_name='MyDediServer'
+dontstarve_dir='$HOME/.klei/DoNotStarveTogether'
+
+function fail()
+{
+	echo Error: '$@' >&2
+	exit 1
+}
+
+function check_for_file()
+{
+	if [ ! -e '$1' ]; then
+		fail 'Missing file: $1'
+	fi
+}
+
+cd '$steamcmd_dir' || fail 'Missing $steamcmd_dir directory!'
+
+check_for_file 'steamcmd.sh'
+check_for_file '$dontstarve_dir/$cluster_name/cluster.ini'
+check_for_file '$dontstarve_dir/$cluster_name/cluster_token.txt'
+check_for_file '$dontstarve_dir/$cluster_name/Master/server.ini'
+check_for_file '$dontstarve_dir/$cluster_name/Caves/server.ini'
+
+./steamcmd.sh +force_install_dir '$install_dir' +login anonymous +app_update 343050 validate +quit
+
+check_for_file '$install_dir/bin64'
+
+cd '$install_dir/bin64' || fail
+
+run_shared=(./dontstarve_dedicated_server_nullrenderer_x64)
+run_shared+=(-console)
+run_shared+=(-cluster '$cluster_name')
+run_shared+=(-monitor_parent_process $$)
+
+'${run_shared[@]}' -shard Caves  | sed 's/^/Caves:  /' &
+'${run_shared[@]}' -shard Master | sed 's/^/Master: /'
+```
+
+按`esc`后输入`:wq`保存脚本
+
+给可执行权限
+```
+chmod u+x ~/jihuang.sh
+```
+
+### 最后，启动脚本
+
+```
+screen -S jihuang
+~/jihuang.sh
+```
+
+成功运行后按`ctrl+A+D`热键，放入后台运行
+
+> [!IMPORTANT]
+> 在服务器防火墙或安全组里放行`11000`,`11001`,`10889`端口的udp协议
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/781620cb24d35c0d81fb7.png' width='100%'>`
+
+## ~~不出意外的话~~，这服务器就~~可算~~搭建完成了！
+
+`Gmeek-html<img src='https://img-5yy.pages.dev/file/9128077c76906dfe1ec3e.jpg' width='100%'>`
+
+
+
+
+
+
+
+
+
+
+。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blog.liyifans.xyz/post/Ubuntu-fu-wu-qi-da-jian-ji-huang-fu-wu-qi.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/105039694?v=4">
+<title>Ubuntu服务器搭建饥荒服务器</title>
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+</style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}</style><style>.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}</style><style>.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}</style><style>.markdown-alert.markdown-alert-caution {border-left-color:var(--borderColor-danger-emphasis, var(--color-danger-emphasis));background-color:var(--color-danger-subtle);}.markdown-alert.markdown-alert-caution .markdown-alert-title {color: var(--fgColor-danger,var(--color-danger-fg));}</style>
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">Ubuntu服务器搭建饥荒服务器</h1>
+<div class="title-right">
+    <a href="https://blog.liyifans.xyz" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>周末闲的蛋疼，搞个饥荒服务器和朋友耍耍</p>
+<blockquote>
+<p>环境：Ubuntu 22.04 server 64bit云服务器，root用户</p>
+</blockquote>
+<h2>一、安装依赖项</h2>
+<pre class="notranslate"><code class="notranslate">add-apt-repository multiverse
+dpkg --add-architecture i386
+apt update
+apt install libstdc++6 libgcc1 libcurl4-gnutls-dev:i386 lib32z1
+</code></pre>
+<h2>二、安装服务端</h2>
+<h3>1. 安装，启动<code class="notranslate">steamcmd</code></h3>
+<pre class="notranslate"><code class="notranslate">mkdir ~/steamcmd
+cd ~/steamcmd
+wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz 
+tar -xvzf steamcmd_linux.tar.gz         #解压
+./steamcmd.sh
+</code></pre>
+<blockquote>
+<p>等待更新，直到出现<code class="notranslate">steam&gt;</code><br>
+<img src="https://img-5yy.pages.dev/file/8ccc538464f59a848ae23.png" width="100%"></p>
+</blockquote>
+<h3>2. 下载饥荒服务端</h3>
+<blockquote>
+<p>在<code class="notranslate">steam&gt;</code>后输入命令</p>
+</blockquote>
+<pre class="notranslate"><code class="notranslate">login anonymous
+force_install_dir ../dontstarvetogether_dedicated_server
+app_update 343050
+</code></pre>
+<div class="markdown-alert markdown-alert-caution"><p class="markdown-alert-title"><svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p><p><code class="notranslate">app_update</code>不要加入<code class="notranslate">validate</code>参数</p>
+</div>
+<p>耐心等待下载完成</p>
+<p><img src="https://img-5yy.pages.dev/file/4b7083b4de7bf47de8809.png" width="100%"></p>
+<p><del>太慢了太慢了真的太慢了</del> T^T</p>
+<p>下载完成后输入<code class="notranslate">quit</code>退出<code class="notranslate">steamcmd</code></p>
+<p><img src="https://img-5yy.pages.dev/file/e8e0f2029cf50830509b0.png" width="100%"></p>
+<h3>3. 创建饥荒存档目录</h3>
+<pre class="notranslate"><code class="notranslate">mkdir -p ~/.klei/DoNotStarveTogether/Cluster_1
+</code></pre>
+<h2>三、 生成存档</h2>
+<h3>1. 打开<code class="notranslate">steam</code>中的<code class="notranslate">饥荒</code></h3>
+<p><img src="https://img-5yy.pages.dev/file/49abb3beda1f0f72027d2.png" width="100%"></p>
+<h3>2. 订阅mod（可选）</h3>
+<blockquote>
+<p>开加速器</p>
+</blockquote>
+<p>在饥荒创意工坊选择mod并订阅</p>
+<h3>3. 创建世界</h3>
+<p>点击<code class="notranslate">创建游戏</code>→<code class="notranslate">创建新世界</code>→按照要求调整难度和规则→点击<code class="notranslate">模组</code>，勾选所有需要的mod→点击生成世界</p>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>mod可能会有兼容性问题，如果一直开者无法生成世界，可以一一排查出有问题的mod删除</p>
+</div>
+<h3>4. 进入选人界面后退回主界面</h3>
+<h3>5. 点击<code class="notranslate">创建游戏</code>→ 点击刚刚创建世界右侧的扳手图标→ 点击打开世界文件夹</h3>
+<p><img src="https://img-5yy.pages.dev/file/83b5b58677d1c30f5cbdc.png" width="100%"></p>
+<h2>四、获取token和配置</h2>
+<h3>1. 进入<a href="https://accounts.klei.com/login" rel="nofollow">Klei官网</a></h3>
+<p><a href="https://accounts.klei.com/login" rel="nofollow">https://accounts.klei.com/login</a></p>
+<p>选择steam登录</p>
+<h3>2. 选择<code class="notranslate">游戏</code>进入饥荒服务器界面</h3>
+<p><img src="https://img-5yy.pages.dev/file/ff61aaf485279aeb55023.png" width="100%"></p>
+<h3>3. 新建服务器，进入配置界面</h3>
+<p><img src="https://img-5yy.pages.dev/file/57d6f5cee5a2edd74411a.png" width="100%"></p>
+<h3>4. 填好信息后点击下载设置</h3>
+<p><img src="https://img-5yy.pages.dev/file/2c9039d271f30fc64f487.png" width="100%"></p>
+<p>下载完成后打开压缩包</p>
+<p><img src="https://img-5yy.pages.dev/file/71a2d42329a53650c4530.png" width="100%"></p>
+<h2>五、上传存档</h2>
+<h3>1. 替换配置文件</h3>
+<p>把压缩包中<code class="notranslate">cluster.ini</code>,<code class="notranslate">cluster_token.txt</code>,<code class="notranslate">Cave</code>文件夹中的<code class="notranslate">server.ini</code>,<code class="notranslate">Master</code>文件夹中的<code class="notranslate">server.ini</code>替换到<code class="notranslate">步骤三中打开的存档文件夹</code>中的相同位置</p>
+<h3>2. 打开<a href="https://filezilla-project.org/" rel="nofollow">FileZilla</a></h3>
+<blockquote>
+<p><a href="https://filezilla-project.org/" rel="nofollow">https://filezilla-project.org/</a></p>
+</blockquote>
+<h3>3. 远程sftp连接服务器</h3>
+<p><img src="https://img-5yy.pages.dev/file/8baf7f166f0d1c7dce591.png" width="100%"></p>
+<h3>4. 把<code class="notranslate">本地存档文件夹</code>中的文件上传到<code class="notranslate">云服务器存档文件夹</code>中</h3>
+<p><img src="https://img-5yy.pages.dev/file/5b6eeacec9c8cc3acd148.png" width="100%"></p>
+<blockquote>
+<p>拖拽进去！！</p>
+</blockquote>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>如果添加了mod，需要把mod的代码添加进<code class="notranslate">~/dontstarvetogether_dedicated_server/mods/dedicated_server_mods_setup.lua</code><br>
+<img src="https://img-5yy.pages.dev/file/5d6de16f0b40b6badd8f0.png" width="100%"><br>
+<img src="https://img-5yy.pages.dev/file/e64c38db8901f73232689.png" width="100%"><br>
+mod代码可以从<code class="notranslate">本地存档文件夹/Master/modoverrides.lua</code>中找到！！</p>
+</div>
+<h2>六、创建启动脚本并运行</h2>
+<pre class="notranslate"><code class="notranslate">cd ~
+vim jihuang.sh
+</code></pre>
+<p>按<code class="notranslate">任意字母键</code>后输入：</p>
+<pre class="notranslate"><code class="notranslate">#!/bin/bash
+
+steamcmd_dir="$HOME/steamcmd"
+install_dir="$HOME/dontstarvetogether_dedicated_server"
+cluster_name="MyDediServer"
+dontstarve_dir="$HOME/.klei/DoNotStarveTogether"
+
+function fail()
+{
+	echo Error: "$@" &gt;&amp;2
+	exit 1
+}
+
+function check_for_file()
+{
+	if [ ! -e "$1" ]; then
+		fail "Missing file: $1"
+	fi
+}
+
+cd "$steamcmd_dir" || fail "Missing $steamcmd_dir directory!"
+
+check_for_file "steamcmd.sh"
+check_for_file "$dontstarve_dir/$cluster_name/cluster.ini"
+check_for_file "$dontstarve_dir/$cluster_name/cluster_token.txt"
+check_for_file "$dontstarve_dir/$cluster_name/Master/server.ini"
+check_for_file "$dontstarve_dir/$cluster_name/Caves/server.ini"
+
+./steamcmd.sh +force_install_dir "$install_dir" +login anonymous +app_update 343050 validate +quit
+
+check_for_file "$install_dir/bin64"
+
+cd "$install_dir/bin64" || fail
+
+run_shared=(./dontstarve_dedicated_server_nullrenderer_x64)
+run_shared+=(-console)
+run_shared+=(-cluster "$cluster_name")
+run_shared+=(-monitor_parent_process $$)
+
+"${run_shared[@]}" -shard Caves  | sed 's/^/Caves:  /' &amp;
+"${run_shared[@]}" -shard Master | sed 's/^/Master: /'
+</code></pre>
+<p>按<code class="notranslate">esc</code>后输入<code class="notranslate">:wq</code>保存脚本</p>
+<p>给可执行权限</p>
+<pre class="notranslate"><code class="notranslate">chmod u+x ~/jihuang.sh
+</code></pre>
+<h3>最后，启动脚本</h3>
+<pre class="notranslate"><code class="notranslate">screen -S jihuang
+~/jihuang.sh
+</code></pre>
+<p>成功运行后按<code class="notranslate">ctrl+A+D</code>热键，放入后台运行</p>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p>在服务器防火墙或安全组里放行<code class="notranslate">11000</code>,<code class="notranslate">11001</code>,<code class="notranslate">10889</code>端口的udp协议<br>
+<img src="https://img-5yy.pages.dev/file/781620cb24d35c0d81fb7.png" width="100%"></p>
+</div>
+<h2><del>不出意外的话</del>，这服务器就<del>可算</del>搭建完成了！</h2>
+<p><img src="https://img-5yy.pages.dev/file/9128077c76906dfe1ec3e.jpg" width="100%"></p></div>
+<div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer">Copyright © <span id="year"></span><a href="https://blog.liyifans.xyz"> LIYIFAN的备忘录 </a>
+<p>
+<span id="runday"></span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a>
+</p>
+
+<script>
+if("07/03/2024"!=""){
+    var now=new Date();
+    var startSite=new Date("07/03/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("year").innerHTML=now.getFullYear();
+    if(""!=""){document.getElementById("runday").innerHTML=" • "+"网站运行"+diffDay+"天"+" • ";}
+    else{document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";}
+}
+</script>
+</div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","liyifanniubi/liyifanniubi.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+</script>
+
+
+</html>
