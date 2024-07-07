@@ -1,6 +1,6 @@
-win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清对方声音，所以我一气之下。。。
+win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清双方声音，所以我一气之下。。。
 
-## [下载点这](https://wwf.lanzouo.com/iluD323u8c9a)
+## [下载点这](https://wwf.lanzouo.com/i5gtV23u9onc)
 
 
 ### 1. 获取麦克风音量
@@ -166,7 +166,7 @@ if "%1" == "h" goto begin
 mshta vbscript:createobject("wscript.shell").run("""%~nx0"" h",0)(window.close)&&exit
 :begin
 
-python <path_to>/mic.py
+mic.exe
 ```
 
 > 关闭cmd窗口后台运行
@@ -174,7 +174,7 @@ python <path_to>/mic.py
 关闭脚本`kill.bat`：
 
 ```cmd
-taskkill /IM python.exe /F
+taskkill /IM mic.exe /F
 pause
 ```
 

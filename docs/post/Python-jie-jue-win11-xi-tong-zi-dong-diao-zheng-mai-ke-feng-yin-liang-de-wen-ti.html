@@ -9,9 +9,9 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清对方声音，所以我一气之下。">
+<meta name="description" content="win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清双方声音，所以我一气之下。">
 <meta property="og:title" content="Python解决win11系统自动调整麦克风音量的问题">
-<meta property="og:description" content="win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清对方声音，所以我一气之下。">
+<meta property="og:description" content="win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清双方声音，所以我一气之下。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://blog.liyifans.xyz/post/Python-jie-jue-win11-xi-tong-zi-dong-diao-zheng-mai-ke-feng-yin-liang-de-wen-ti.html">
 <meta property="og:image" content="https://img-5yy.pages.dev/file/fd9b3692e28c6c28d3cc5.png">
@@ -64,8 +64,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清对方声音，所以我一气之下。。。</p>
-<h2><a href="https://wwf.lanzouo.com/iluD323u8c9a" rel="nofollow">下载点这</a></h2>
+<div class="markdown-body" id="postBody"><p>win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清双方声音，所以我一气之下。。。</p>
+<h2><a href="https://wwf.lanzouo.com/i5gtV23u9onc" rel="nofollow">下载点这</a></h2>
 <h3>1. 获取麦克风音量</h3>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">ctypes</span> <span class="pl-k">import</span> <span class="pl-s1">cast</span>, <span class="pl-v">POINTER</span>
 <span class="pl-k">from</span> <span class="pl-s1">comtypes</span> <span class="pl-k">import</span> <span class="pl-v">CLSCTX_ALL</span>
@@ -205,12 +205,12 @@ pyinstaller --onefile mic.py</pre></div>
 mshta vbscript:createobject(<span class="pl-s"><span class="pl-pds">"</span>wscript.shell<span class="pl-pds">"</span></span>).run(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span><span class="pl-pds">"</span><span class="pl-v">%~nx0</span><span class="pl-pds">"</span><span class="pl-pds">"</span> h<span class="pl-pds">"</span></span>,0)(window.close)<span class="pl-k">&amp;&amp;</span>exit
 :<span class="pl-k">begin</span>
 
-python <span class="pl-k">&lt;</span>path_to<span class="pl-k">&gt;</span>/mic.py</pre></div>
+mic.exe</pre></div>
 <blockquote>
 <p>关闭cmd窗口后台运行</p>
 </blockquote>
 <p>关闭脚本<code class="notranslate">kill.bat</code>：</p>
-<div class="highlight highlight-source-batchfile"><pre class="notranslate"><span class="pl-k">taskkill</span> /IM python.exe /F
+<div class="highlight highlight-source-batchfile"><pre class="notranslate"><span class="pl-k">taskkill</span> /IM mic.exe /F
 <span class="pl-k">pause</span></pre></div>
 <h3>7. 把启动脚本加入系统启动项</h3>
 <p><code class="notranslate">windows</code>+<code class="notranslate">R</code></p>
