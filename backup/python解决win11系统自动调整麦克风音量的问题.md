@@ -1,6 +1,6 @@
 win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清对方声音，所以我一气之下。。。
 
-## [下载点这](https://wwf.lanzouo.com/ie4NM23u899c)
+## [下载点这](https://wwf.lanzouo.com/iluD323u8c9a)
 
 
 ### 1. 获取麦克风音量
@@ -158,7 +158,7 @@ pyinstaller --onefile mic.py
 
 ### 6. 编写脚本
 
-启动脚本`run.bat`：
+启动脚本`mic.bat`：
 
 ```cmd
 @echo off
@@ -184,7 +184,7 @@ pause
 ```
 shell:startup
 ```
-把`run.bat`的快捷方式放入`startup`文件夹，实现开机自动静默启动
+把`mic.bat`的快捷方式放入`startup`文件夹，实现开机自动静默启动
 
 ## 效果图
 

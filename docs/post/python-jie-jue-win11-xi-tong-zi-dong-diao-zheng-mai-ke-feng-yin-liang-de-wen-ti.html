@@ -65,7 +65,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><p>win11在语音通话的时候，麦克风音量经常被自动下调，导致我听不清对方声音，所以我一气之下。。。</p>
-<h2><a href="https://wwf.lanzouo.com/ie4NM23u899c" rel="nofollow">下载点这</a></h2>
+<h2><a href="https://wwf.lanzouo.com/iluD323u8c9a" rel="nofollow">下载点这</a></h2>
 <h3>1. 获取麦克风音量</h3>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">ctypes</span> <span class="pl-k">import</span> <span class="pl-s1">cast</span>, <span class="pl-v">POINTER</span>
 <span class="pl-k">from</span> <span class="pl-s1">comtypes</span> <span class="pl-k">import</span> <span class="pl-v">CLSCTX_ALL</span>
@@ -199,7 +199,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 pyinstaller --onefile mic.py</pre></div>
 <p>得到<code class="notranslate">mic.exe</code></p>
 <h3>6. 编写脚本</h3>
-<p>启动脚本<code class="notranslate">run.bat</code>：</p>
+<p>启动脚本<code class="notranslate">mic.bat</code>：</p>
 <div class="highlight highlight-source-batchfile"><pre class="notranslate"><span class="pl-k">@</span><span class="pl-k">echo</span> <span class="pl-k">off</span>
 <span class="pl-k">if</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-v">%1</span><span class="pl-pds">"</span></span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>h<span class="pl-pds">"</span></span> <span class="pl-k">goto</span> begin
 mshta vbscript:createobject(<span class="pl-s"><span class="pl-pds">"</span>wscript.shell<span class="pl-pds">"</span></span>).run(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span><span class="pl-pds">"</span><span class="pl-v">%~nx0</span><span class="pl-pds">"</span><span class="pl-pds">"</span> h<span class="pl-pds">"</span></span>,0)(window.close)<span class="pl-k">&amp;&amp;</span>exit
@@ -216,7 +216,7 @@ python <span class="pl-k">&lt;</span>path_to<span class="pl-k">&gt;</span>/mic.p
 <p><code class="notranslate">windows</code>+<code class="notranslate">R</code></p>
 <pre class="notranslate"><code class="notranslate">shell:startup
 </code></pre>
-<p>把<code class="notranslate">run.bat</code>的快捷方式放入<code class="notranslate">startup</code>文件夹，实现开机自动静默启动</p>
+<p>把<code class="notranslate">mic.bat</code>的快捷方式放入<code class="notranslate">startup</code>文件夹，实现开机自动静默启动</p>
 <h2>效果图</h2>
 <p><img src="https://img-5yy.pages.dev/file/2cc80eb1d372209f79369.gif" width="100%"></p>
 <p><img src="https://img-5yy.pages.dev/file/e6c93445272961ac95054.png" width="100%"></p></div>
