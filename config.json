@@ -13,6 +13,6 @@
     "dayTheme":"light_tritanopia ",
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
     "showPostSource":0,
-    "indexStyle":"<style>.blogTitle {display: unset;}#header {height: 300px;}#header h1 {position: absolute;left: 50%;transform: translateX(-50%);display: flex;flex-direction: column;align-items: center;}.avatar {width: 200px;height: 200px;}#header h1 a {margin-top: 30px;}</style>",
+    "indexStyle":"<style>.blogTitle {display: unset;}#header {height: 300px;}#header h1 {position: absolute;left: 50%;transform: translateX(-50%);display: flex;flex-direction: column;align-items: center;}.avatar {width: 200px;height: 200px;}#header h1 a {margin-top: 30px;font-family: fantasy;}</style>",
     "GMEEK_VERSION":"last"
 }
