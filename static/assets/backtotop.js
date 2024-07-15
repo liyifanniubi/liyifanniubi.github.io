@@ -5,7 +5,7 @@ btn.id = "backToTopBtn";
 // SVG图标作为按钮内容
 btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M5 12l7-7 7 7" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-// 按钮样式
+// 按钮CSS
 btn.style.display = "none"; // 默认隐藏
 btn.style.position = "fixed"; // 固定在页面
 btn.style.bottom = "80px"; // 距离底部80像素
@@ -36,24 +36,23 @@ btn.onmouseout = function() {
 // 回到顶
 btn.addEventListener("click", clickHandler);
 function clickHandler(e) {
+    btn.style.backgroundColor = "black";
+    svg.querySelector("path").style.stroke = "white";
     let timer = setInterval(function () {
         var distanceY = document.documentElement.scrollTop || document.body.scrollTop;//兼容
         if (distanceY == 0){
             clearInterval(timer);
+            btn.style.backgroundColor = "white";
+            svg.querySelector("path").style.stroke = "black";
             return;
         } 
-        var speed = Math.ceil(distanceY/16);//speed先快后满
+        var speed = Math.ceil(distanceY/16) + 5;//speed先快后满
         document.documentElement.scrollTop=distanceY-speed;
-    }, 16);
+    }, 10);
 }
 
 // 将按钮添加到body
 document.body.appendChild(btn);
-
-// 滚动时检查是否显示按钮
-window.onscroll = function() {
-  scrollFunction();
-};
 
 function scrollFunction() {
   if (window.innerWidth < 1000) {
@@ -64,6 +63,11 @@ function scrollFunction() {
     btn.style.display = "none";
   }
 }
+
+// 滚动时检查是否显示按钮
+window.onscroll = function() {
+  scrollFunction();
+};
 
 // 检查窗口宽度
 if (window.innerWidth >= 1000) {
