@@ -8,7 +8,7 @@ btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xml
 // 按钮CSS
 btn.style.display = "none"; // 默认隐藏
 btn.style.position = "fixed"; // 固定在页面
-btn.style.bottom = "20px"; // 距离底部20像素
+btn.style.bottom = "80px"; // 距离底部80像素
 btn.style.right = "20px"; // 距离右侧20像素
 btn.style.zIndex = "99"; // 确保按钮在最前
 btn.style.border = "2px solid black"; // 黑色边框
