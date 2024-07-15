@@ -192,6 +192,5 @@ shell:startup
 
 `Gmeek-html<img src="https://img-5yy.pages.dev/file/e6c93445272961ac95054.png" width="100%">`
 
-<!-- ##{"script":"<script src='https://blog.meekdai.com/assets/GmeekTOC.js'></script>"}## -->
 
 
