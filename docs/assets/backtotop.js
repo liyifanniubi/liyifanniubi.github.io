@@ -5,7 +5,7 @@ btn.id = "backToTopBtn";
 // SVG图标作为按钮内容
 btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M5 12l7-7 7 7" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-// 按钮CSS
+// 按钮样式
 btn.style.display = "none"; // 默认隐藏
 btn.style.position = "fixed"; // 固定在页面
 btn.style.bottom = "80px"; // 距离底部80像素
