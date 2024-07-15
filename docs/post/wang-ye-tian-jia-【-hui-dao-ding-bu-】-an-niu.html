@@ -124,11 +124,6 @@ Math.ceil()    “向上取整”， 小数部分直接舍去，并向正数部�
 <span class="pl-c">// 将按钮添加到body</span>
 <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">.</span><span class="pl-en">appendChild</span><span class="pl-kos">(</span><span class="pl-s1">btn</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-<span class="pl-c">// 滚动时检查是否显示按钮</span>
-<span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-en">onscroll</span> <span class="pl-c1">=</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
-  <span class="pl-en">scrollFunction</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos">;</span>
-
 <span class="pl-k">function</span> <span class="pl-en">scrollFunction</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
   <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
     <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">display</span> <span class="pl-c1">=</span> <span class="pl-s">"none"</span><span class="pl-kos">;</span>
@@ -138,6 +133,11 @@ Math.ceil()    “向上取整”， 小数部分直接舍去，并向正数部�
     <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">display</span> <span class="pl-c1">=</span> <span class="pl-s">"none"</span><span class="pl-kos">;</span>
   <span class="pl-kos">}</span>
 <span class="pl-kos">}</span>
+
+<span class="pl-c">// 滚动时检查是否显示按钮</span>
+<span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-en">onscroll</span> <span class="pl-c1">=</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-en">scrollFunction</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
 
 <span class="pl-c">// 初始检查窗口宽度</span>
 <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span> <span class="pl-c1">&gt;=</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
