@@ -6,4 +6,4 @@
 
 
 
-<!-- ##{"script":"<script src='https://blog.meekdai.com/assets/GmeekTOC.js'></script>"}## -->
+<!-- ##{"script":"<script src='https://gitee.com/liyifanniubi/assets/raw/master/assets/GmeekTOC.js'></script>"}## -->
