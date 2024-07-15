@@ -6,4 +6,4 @@
 
 
 
-<!-- ##{"script":"<script src='https://liyifanniubi.github.io/assets/GmeekTOC.js'></script>"}## -->
+<!-- ##{"script":"<script src='https://liyifanniubi.github.io/GmeekTOC.js'></script>"}## -->
