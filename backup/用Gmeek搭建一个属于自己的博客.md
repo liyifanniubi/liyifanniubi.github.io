@@ -52,7 +52,6 @@ https://github.com/Meekdai/Gmeek
 > 关于自定义域名，可以在下方的`custom domain`中填写，需要一个二级域名，并添加cname解析，指向`github账号的名字.github.io`
 `Gmeek-html<img src="https://img-5yy.pages.dev/file/8f04f09bdcdf8fd81cd6f.png" width="100%">`
 `Gmeek-html<img src="https://img-5yy.pages.dev/file/0bb45acbb508d2d485def.png" width="100%">`
-如果没有用自带https的cf dns代理，可以勾选`enforce https`，
 
 
 
