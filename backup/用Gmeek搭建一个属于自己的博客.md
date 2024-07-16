@@ -186,6 +186,18 @@ https://github.com/Meekdai/Gmeek
 > 必须至少包含一个`标签（lable）`
 - 删除文章：关闭或删除对应issue，然后在`action`中的`build gmeek`里`run workflow`
 - 置顶文章：pin文章对应的`issue`
+- 标题跳转列表：
+```
+<!-- ##{"script":"<script src='https://blog.meekdai.com/assets/GmeekTOC.js'></script>"}## -->
+```
+- 插入图片：
+```
+`Gmeek-html<img src="" alt="" title="" width="100%">`
+```
+- 插入网易云外链播放器：
+```
+`Gmeek-html<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="https//music.163.com/outchain/player?type=2&amp;id=xxxxxxxx&amp;auto=1&amp;height=66"></iframe>`
+```
 
 
 
