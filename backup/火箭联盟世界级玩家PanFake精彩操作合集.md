@@ -6,4 +6,4 @@
 
 `Gmeek-html<video src="https://mp4.ziyuan.wang/view.php/4d917c0de8277acb81e3a3f53b76bca4.mp4" type="video/mp4" controls width="100%"></video>`
 
-<!-- ##{"script":"<script src='https://blog.meekdai.com/assets/GmeekTOC.js'></script>"}## -->
+<!-- ##{"script":"<script src='https://blog.liyifan.xyz/assets/GmeekTOC.js'></script>"}## -->
