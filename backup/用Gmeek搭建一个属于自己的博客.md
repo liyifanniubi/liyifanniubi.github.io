@@ -188,7 +188,7 @@ https://github.com/Meekdai/Gmeek
 - 置顶文章：pin文章对应的`issue`
 - 标题目录列表：
 ```
-<!-- ##{"script":"<script src='https://blog.meekdai.com/assets/GmeekTOC.js'></script>"}## -->
+<!-- ##{"script":"<script src='https://blog.liyifan.xyz/assets/GmeekTOC.js'></script>"}## -->
 ```
 - 插入图片：
 ```
