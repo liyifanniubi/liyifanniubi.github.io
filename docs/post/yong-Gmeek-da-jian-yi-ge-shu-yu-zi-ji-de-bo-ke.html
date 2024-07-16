@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://blog.liyifans.xyz/post/yong-Gmeek-da-jian-yi-ge-shu-yu-zi-ji-de-bo-ke.html">
 <meta property="og:image" content="https://img-5yy.pages.dev/file/fd9b3692e28c6c28d3cc5.png">
 <title>用Gmeek搭建一个属于自己的博客</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 </head>
 <style>
@@ -310,7 +310,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <ul>
 <li>删除文章：关闭或删除对应issue，然后在<code class="notranslate">action</code>中的<code class="notranslate">build gmeek</code>里<code class="notranslate">run workflow</code></li>
 <li>置顶文章：pin文章对应的<code class="notranslate">issue</code></li>
-<li>标题跳转列表：</li>
+<li>标题目录列表：</li>
 </ul>
 <pre class="notranslate"><code class="notranslate">&lt;!-- ##{"script":"&lt;script src='https://blog.meekdai.com/assets/GmeekTOC.js'&gt;&lt;/script&gt;"}## --&gt;
 </code></pre>
@@ -323,7 +323,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>插入网易云外链播放器：</li>
 </ul>
 <pre class="notranslate"><code class="notranslate">`Gmeek-html&lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="https//music.163.com/outchain/player?type=2&amp;amp;id=xxxxxxxx&amp;amp;auto=1&amp;amp;height=66"&gt;&lt;/iframe&gt;`
-</code></pre></div>
+</code></pre>
+<ul>
+<li>插入视频：</li>
+</ul>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s">`Gmeek-html&lt;video src="" type="video/xxx" controls width="100%"&gt;&lt;/video&gt;`</span>
+<span class="pl-s1">autoplay</span> <span class="pl-c">//自动播放</span>
+<span class="pl-s1">loop</span> <span class="pl-c">//循环播放</span>
+<span class="pl-s1">muted</span> <span class="pl-c">//静音</span>
+<span class="pl-s1">poster</span> <span class="pl-c">//第一帧加载之前的预览图</span></pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
