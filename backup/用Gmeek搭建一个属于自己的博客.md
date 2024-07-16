@@ -190,6 +190,10 @@ https://github.com/Meekdai/Gmeek
 ```
 <!-- ##{"script":"<script src='https://blog.liyifan.xyz/assets/GmeekTOC.js'></script>"}## -->
 ```
+- 回到顶部按钮：
+```
+<!-- ##{"script":"<script src='https://blog.liyifan.xyz/assets/backtotop.js'></script>"}## -->
+```
 - 插入图片：
 ```
 `Gmeek-html<img src="" alt="" width="100%">`
