@@ -1,6 +1,6 @@
 **PanFake是一名世界级的《火箭联盟》玩家，以其惊人的技术、精准的操作和无与伦比的游戏意识而闻名。在此合集里，你将看到他在赛场上如何运筹帷幄，用一流的技巧和战术征服对手。准备好迎接一场视觉盛宴，感受PanFake带来的火热激情与顶尖竞技水平吧！**
 
-`Gmeek-html<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="https//music.163.com/outchain/player?type=2&amp;id=1334667454&amp;auto=1&amp;height=66"></iframe>`
+`Gmeek-html<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="https://music.163.com/outchain/player?type=2&amp;id=1334667454&amp;auto=1&amp;height=66"></iframe>`
 
 ## 2024.7.14
 
