@@ -2,6 +2,8 @@
 
 `Gmeek-html<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="https://music.163.com/outchain/player?type=2&amp;id=1334667454&amp;auto=1&amp;height=66"></iframe>`
 
+`Gmeek-html<embed frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="110" src="//music.163.com/outchain/player?type=0&amp;id=3128693654&amp;auto=1&amp;height=90">`
+
 ## 2024.7.14
 
 `Gmeek-html<video src="https://mp4.ziyuan.wang/view.php/4d917c0de8277acb81e3a3f53b76bca4.mp4" type="video/mp4" controls width="100%"></video>`
