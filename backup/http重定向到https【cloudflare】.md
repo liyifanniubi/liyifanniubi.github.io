@@ -6,7 +6,7 @@
 
 ### 3. 填入配置
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/3bebc9046c32472e69cdd.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img-5yy.pages.dev/file/a2acd9c35c8003387c6ae.png" alt="img" width="100%">`
 
 > [!NOTE]
 > `concat()`  方法用于连接两个或多个数组。
