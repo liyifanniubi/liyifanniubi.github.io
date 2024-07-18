@@ -65,7 +65,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><p>Gmeek默认的分页只有<code class="notranslate">上一页</code>和<code class="notranslate">下一页</code>，翻页的时候就感觉很无力，<del>没有那种掌控全局的感觉</del>，所以搞一个插件插入数字分页条吧。</p>
-<p><img src="https://img.liyifan.xyz/file/b1853694dd424769c6def.png" alt="img" width="100%"></p>
+<p><img src="https://img.liyifan.xyz/file/a0f7944a4d8b0c9e7a143.png" alt="img" width="100%"></p>
 <blockquote>
 <p>默认是这样的</p>
 </blockquote>
@@ -74,7 +74,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 <div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
 <ol>
-<li>通过解析Gmeek的<code class="notranslate">rss.xml</code>来获取文章总数</li>
+<li>通过解析<code class="notranslate">rss.xml</code>来获取文章总数</li>
 <li>除以每页的文章数，<code class="notranslate">Math.ceil()</code>获得总页数</li>
 <li>获取当前url，并匹配得到当前页数</li>
 <li>创建数字分页条。小于等于十页完整显示；大于十页时保留首尾各三页以及当前页和与当前页相邻的两页，省略处用省略号表示</li>

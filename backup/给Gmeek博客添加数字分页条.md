@@ -1,6 +1,6 @@
 Gmeek默认的分页只有`上一页`和`下一页`，翻页的时候就感觉很无力，~~没有那种掌控全局的感觉~~，所以搞一个插件插入数字分页条吧。
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/b1853694dd424769c6def.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/a0f7944a4d8b0c9e7a143.png" alt="img" width="100%">`
 > 默认是这样的
 
 ## 开搞！！！！！！！！！！！
@@ -9,7 +9,7 @@ Gmeek默认的分页只有`上一页`和`下一页`，翻页的时候就感觉�
 > 变量`itemsPerPage`和`custompages`需要按情况更改，`custompages`是`config.json`中的`"singlePage":[]`数量
 
 > [!NOTE]
-> 1. 通过解析Gmeek的`rss.xml`来获取文章总数
+> 1. 通过解析`rss.xml`来获取文章总数
 > 2. 除以每页的文章数，`Math.ceil()`获得总页数
 > 3. 获取当前url，并匹配得到当前页数
 > 4. 创建数字分页条。小于等于十页完整显示；大于十页时保留首尾各三页以及当前页和与当前页相邻的两页，省略处用省略号表示
