@@ -188,9 +188,9 @@ shell:startup
 
 ## 效果图
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/2cc80eb1d372209f79369.gif" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/2cc80eb1d372209f79369.gif" alt="img" width="100%">`
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/e6c93445272961ac95054.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/e6c93445272961ac95054.png" alt="img" width="100%">`
 
 
 
