@@ -82,6 +82,7 @@ function updatePagination(totalPages, currentPage) {
             color: red;
             text-decoration: underline;
             font-size: 18px;
+            border-color: #56539d;
         }
     `;
     document.head.appendChild(style);
