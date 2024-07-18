@@ -17,11 +17,11 @@ https://github.com/Meekdai/Gmeek
 
 在Gmeek仓库的readme中点击`通过模板创建仓库`
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/e860fa26fc02859344a77.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/e860fa26fc02859344a77.png" alt="img" width="100%">`
 
 会打开如下网页：
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/c4fc9e5406082ab8eaf02.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/c4fc9e5406082ab8eaf02.png" alt="img" width="100%">`
 
 在`Repository name`处填写`github账号的名字.github.io`
 
@@ -32,42 +32,42 @@ https://github.com/Meekdai/Gmeek
 
 最后点击`create repository`完成仓库创建！
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/e7a2658c391bb245ff30f.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/e7a2658c391bb245ff30f.png" alt="img" width="100%">`
 
 ## 二、配置仓库
 
 ### 1. 进入刚刚创建完成的仓库，点击`settings`
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/edc56fb31b0510b441497.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/edc56fb31b0510b441497.png" alt="img" width="100%">`
 
 ### 2. 进入`pages`分页
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/89198898a426807f1ed19.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/89198898a426807f1ed19.png" alt="img" width="100%">`
 
 ### 3. 将构建方式改为`github actions`
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/5adfdac21ba9da137f6e4.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/5adfdac21ba9da137f6e4.png" alt="img" width="100%">`
 
 > [!NOTE]
 > 关于自定义域名，可以在下方的`custom domain`中填写，需要一个二级域名，并添加cname解析，指向`github账号的名字.github.io`
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/8f04f09bdcdf8fd81cd6f.png" alt="img" width="100%">`
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/98294a9f9b913b9caf96b.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/8f04f09bdcdf8fd81cd6f.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/98294a9f9b913b9caf96b.png" alt="img" width="100%">`
 
 
 
 ### 4. 进入`issues`页面，然后点击`new issue`
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/087b466ec09136a170fa9.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/087b466ec09136a170fa9.png" alt="img" width="100%">`
 
 ### 5. 随意填入标题和正文，随意添加一个`标签（lable）`，然后点击`submit new issue`
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/7bc0d98eed8e4fe84484c.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/7bc0d98eed8e4fe84484c.png" alt="img" width="100%">`
 
 此时在`actions`界面中可以看到正在构建，等待一分钟左右直到构建完成
 
 ### 6. 回到`code`界面，此时域名已经生成
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/68b636609b57df758edc2.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/68b636609b57df758edc2.png" alt="img" width="100%">`
 
 > 如果没添加自定义域名，域名会是xxx.github.io
 
@@ -77,11 +77,11 @@ https://github.com/Meekdai/Gmeek
 
 在code界面点击`config.json`
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/4dcf3ca2c7fbc0f740eba.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/4dcf3ca2c7fbc0f740eba.png" alt="img" width="100%">`
 
 点击钢笔图案开始编辑
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/ca56f9adf974763b3d6ae.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/ca56f9adf974763b3d6ae.png" alt="img" width="100%">`
 
 ### 2. [配置参数](https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html)
 
@@ -172,13 +172,13 @@ https://github.com/Meekdai/Gmeek
 
 进入`actions`界面，点击`build gmeek`，选择`run workflow`并点击
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/6fc709491a266dee0d820.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/6fc709491a266dee0d820.png" alt="img" width="100%">`
 
 等待一分钟左右直到完成
 
 ## 到此Gmeek博客搭建全部完成
 
-`Gmeek-html<img src="https://img-5yy.pages.dev/file/6d96abb3b04bbf1c681f9.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/6d96abb3b04bbf1c681f9.png" alt="img" width="100%">`
 
 ## Gmeek博客基本使用方法
 
