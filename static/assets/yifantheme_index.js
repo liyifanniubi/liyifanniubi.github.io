@@ -53,6 +53,12 @@ body {
 
 .SideNav-item:hover {
     background-color: #c3e4e3;
+    border-radius: 10px;
+    transform: scale(1.02);
+}
+
+.SideNav-item {
+    transition: 0.5s;
 }
 
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus, .pagination em:hover, .pagination em:focus {
