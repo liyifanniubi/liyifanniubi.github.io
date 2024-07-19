@@ -55,6 +55,7 @@ body {
     background-color: #c3e4e3;
     border-radius: 10px;
     transform: scale(1.02);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .SideNav-item {
