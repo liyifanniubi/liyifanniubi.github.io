@@ -3,7 +3,7 @@
     function loadjQuery(callback) {
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js';
+    script.src = 'https://blog.liyifan.xyz/lib/jquery.min.js';
     script.onload = callback;
     document.head.appendChild(script);
     }
