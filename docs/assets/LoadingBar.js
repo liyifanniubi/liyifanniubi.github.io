@@ -1,18 +1,19 @@
+
 (function () {
-  function loadjQuery(callback) {
+    function loadjQuery(callback) {
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js';
     script.onload = callback;
     document.head.appendChild(script);
-  }
+    }
 
-  function createLoader() {
+    function createLoader() {
     // 创建CSS样式
     var style = document.createElement('style');
     style.type = 'text/css';
     style.innerHTML = `
-      .loaderbg {
+        .loaderbg {
         background-color: #fff;
         width: 100%;
         height: 100%;
@@ -21,8 +22,8 @@
         left: 0;
         top: 0;
         z-index: 99999999;
-      }
-      .spinner {
+        }
+        .spinner {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -32,22 +33,22 @@
         height: 60px;
         text-align: center;
         font-size: 10px;
-      }
-      .spinner > .double {
+        }
+        .spinner > .double {
         background: #49a9ee;
         height: 100%;
         width: 6px;
         display: inline-block;
         animation: stretchDelay 1.2s infinite ease-in-out;
-      }
-      .spinner .rect2 { animation-delay: -1.1s; }
-      .spinner .rect3 { animation-delay: -1.0s; }
-      .spinner .rect4 { animation-delay: -0.9s; }
-      .spinner .rect5 { animation-delay: -0.8s; }
-      @keyframes stretchDelay {
+        }
+        .spinner .rect2 { animation-delay: -1.1s; }
+        .spinner .rect3 { animation-delay: -1.0s; }
+        .spinner .rect4 { animation-delay: -0.9s; }
+        .spinner .rect5 { animation-delay: -0.8s; }
+        @keyframes stretchDelay {
         0%, 40%, 100% { transform: scaleY(0.4); }
         20% { transform: scaleY(1); }
-      }
+        }
     `;
     document.head.appendChild(style);
 
@@ -55,64 +56,66 @@
     var loader = document.createElement('div');
     loader.className = 'loaderbg';
     loader.innerHTML = `
-      <div class="spinner">
+        <div class="spinner">
         <div class="double rect1"></div>
         <div class="double rect2"></div>
         <div class="double rect3"></div>
         <div class="double rect4"></div>
         <div class="double rect5"></div>
-      </div>
+        </div>
     `;
     document.body.appendChild(loader);
 
     return loader;
-  }
+    }
 
-  function hideLoader(loader) {
+    function hideLoader(loader) {
     loader.style.display = 'none';
-  }
+    }
 
-  function showLoader(loader) {
+    function showLoader(loader) {
     loader.style.display = 'block';
-  }
+    }
 
-  function loadingSpinner(options) {
+    function loadingSpinner(options) {
     var settings = {
-      duration: 3000,
-      onComplete: function () {}
+        duration: 3000,
+        onComplete: function () {}
     };
 
     // 合并用户配置
     if (options) {
-      for (var key in options) {
+        for (var key in options) {
         if (options.hasOwnProperty(key)) {
-          settings[key] = options[key];
+            settings[key] = options[key];
         }
-      }
+        }
     }
 
     var loader = createLoader();
 
     // 页面加载完成后隐藏加载条
     window.addEventListener('load', function () {
-      setTimeout(function () {
+        setTimeout(function () {
         hideLoader(loader);
         settings.onComplete();
-      }, settings.duration);
+        }, settings.duration);
     });
 
     return {
-      show: function () { showLoader(loader); },
-      hide: function () { hideLoader(loader); }
+        show: function () { showLoader(loader); },
+        hide: function () { hideLoader(loader); }
     };
-  }
+    }
 
-  // 加载jQuery并初始化插件
-  loadjQuery(function () {
-    var spinner = loadingSpinner({
-      duration: 3000;
-      }
+    // 加载jQuery并初始化插件
+    loadjQuery(function () {
+    loadingSpinner({
+        duration: 3000,
+        onComplete: function () {
+        console.log("页面加载完成啦！");
+        }
     });
-  });
-
+    });
 })();
+
