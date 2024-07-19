@@ -9,12 +9,12 @@
     "commentLabelColor":"#006b75",
     "yearColorList":["#bc4c00", "#0969da", "#1f883d", "#A333D0"],
     "i18n":"CN",
-    "nightTheme":"dark",
-    "dayTheme":"light_tritanopia ",
+    "themeMode":"fix",
+    "dayTheme":"light_tritanopia",
+    "nightTheme":"github-light",
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
     "showPostSource":0,
-    "script":"<script src='https://blog.liyifan.xyz/assets/backtotop.js'></script>",
-    "indexStyle":"<style>.blogTitle {display: unset;}#header {height: 300px;}#header h1 {position: absolute;left: 50%;transform: translateX(-50%);display: flex;flex-direction: column;align-items: center;}.avatar {width: 200px;height: 200px;}#header h1 a {margin-top: 30px;font-family: fantasy;margin-left: unset;}</style>",
-    "indexScript":"<script src='https://blog.liyifan.xyz/assets/NumPagination.js'></script>",
+    "script":"<script src='https://blog.liyifan.xyz/assets/backtotop.js'>",
+    "indexScript":"<script src='https://blog.liyifan.xyz/assets/NumPagination.js'></script>script src='https://blog.liyifan.xyz/assets/yifantheme_index.js'></script>",
     "GMEEK_VERSION":"last"
 }
