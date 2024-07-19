@@ -15,6 +15,6 @@
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
     "showPostSource":0,
     "script":"<script src='https://blog.liyifan.xyz/assets/backtotop.js'>",
-    "indexScript":"<script src='https://blog.liyifan.xyz/assets/NumPagination.js'></script>script src='https://blog.liyifan.xyz/assets/yifantheme_index.js'></script>",
+    "indexScript":"<script src='https://blog.liyifan.xyz/assets/NumPagination.js'></script><script src='https://blog.liyifan.xyz/assets/yifantheme_index.js'></script>",
     "GMEEK_VERSION":"last"
 }
