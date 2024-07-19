@@ -9,8 +9,6 @@ rainstyle.innerHTML = `
     .raincontent {
         width: 100%;
         height: 100%;
-        background: url('img/1.jpg') center center no-repeat;
-        background-size: cover;
     }
     #rainBox {
         position: fixed;
