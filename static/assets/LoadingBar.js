@@ -106,8 +106,6 @@
         };
     }
 
-    // 阻塞渲染，显示加载条
-    document.write('<div class="loaderbg"><div class="spinner"><div class="double rect1"></div><div class="double rect2"></div><div class="double rect3"></div><div class="double rect4"></div><div class="double rect5"></div></div></div>');
 
     // 加载jQuery并初始化插件
     loadjQuery(function () {
