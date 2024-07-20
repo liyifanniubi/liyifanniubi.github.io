@@ -45,7 +45,7 @@ supernode -p xxxx -M -f
 
 出现`supernode started`代表成功运行:
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/c10ecf4a22b4bc0e6de32.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/c10ecf4a22b4bc0e6de32.png" alt="img" width="100%">`
 
 ### 3. 自定义配置（可选）
 **supernode附加参数:**
@@ -74,7 +74,7 @@ supernode -p xxxx -M -f -a 192.168.10.0-192.168.10.0/24
 
 例：
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/c10bac24329f596b716cb.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/c10bac24329f596b716cb.png" alt="img" width="100%">`
 
 ```
 supernode -p xxxx -M -f -c /etc/n2n/community.list
@@ -91,7 +91,7 @@ supernode -p xxxx -M -f -a 192.168.10.0-192.168.10.0/24 -c /etc/n2n/community.li
 
 在确保程序正常运行后，按`ctrl+A+D`热键，把n2n的screen放入后台运行，然后可以关闭远程连接，大功告成
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/d1a93a736cdf7364723fd.jpg" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/d1a93a736cdf7364723fd.jpg" alt="img" width="100%">`
 
 
 ## [#以下是n2n windows客户端的简单使用方法](https://bugxia.com/525.html)
@@ -104,19 +104,19 @@ supernode -p xxxx -M -f -a 192.168.10.0-192.168.10.0/24 -c /etc/n2n/community.li
 > [!IMPORTANT]
 > 杀毒软件可能会误报，需添加白名单
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/3168ef76584b58778f46b.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/3168ef76584b58778f46b.png" alt="img" width="100%">`
 
 ### 2. 双击n2n.exe打开（确保n2n以管理员权限运行）
 初次运行时，启动器会自动安装所需要的虚拟网卡驱动
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/e8512689f0dd436f0f8e0.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/e8512689f0dd436f0f8e0.png" alt="img" width="100%">`
 
 
 >注：安装驱动时如果出现Windows安全提示，请信任即可
 
 ### 3. 填入信息
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/0da5e82c6507faf143936.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/0da5e82c6507faf143936.png" alt="img" width="100%">`
 
 - **服务器**：填入supernode所在服务器的`ip:端口`或者`域名:端口`（如果有域名）
 - **虚拟网ip**：随意，但是需要互连的客户端需使用相同的网段，如：`192.168.10.3`和`192.168.10.23`，如果设置了自动分配虚拟ip，则可以勾选自动分配！
@@ -126,19 +126,19 @@ supernode -p xxxx -M -f -a 192.168.10.0-192.168.10.0/24 -c /etc/n2n/community.li
 
 - **第一步**：点击测试工具
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/77a76fffbed0f76bb9a6b.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/77a76fffbed0f76bb9a6b.png" alt="img" width="100%">`
 
 - **第二步**：点击关闭防火墙，并确定
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/8d1151d3f4835cdd32f7e.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/8d1151d3f4835cdd32f7e.png" alt="img" width="100%">`
 
 - **第三步**：点击启动
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/6c63e15bce039124da18f.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/6c63e15bce039124da18f.png" alt="img" width="100%">`
 
 ## 服务器右侧出现绿色小勾代表连接成功
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/5fb43167d3758bfce157f.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.liyifan.xyz/file/72bc7f13811bb65fbdcb6.png" data-src="https://img.liyifan.xyz/file/5fb43167d3758bfce157f.png" alt="img" width="100%">`
 
 ### 现在可以ping其他客户端的虚拟ip试试了^_^
 
