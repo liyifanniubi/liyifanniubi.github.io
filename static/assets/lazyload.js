@@ -8,7 +8,7 @@ const ob = new IntersectionObserver((entris) => {
     });
 },
 {
-    rootMargin: '0px 0px 200px 0px',
+    rootMargin: '0px 0px 500px 0px',
 });
 
 const imgs = document.querySelectorAll('img[data-src]');
