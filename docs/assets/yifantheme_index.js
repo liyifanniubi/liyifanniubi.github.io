@@ -21,7 +21,7 @@ style.innerHTML = `
 
 .title-right {
     margin: unset;
-    margin-top: 290px;
+    margin-top: 295px;
     margin-left: 50%;
     transform: translateX(-50%);
 }
@@ -84,6 +84,7 @@ div.title-right .btn {
     align-items: center;
     width: 40px;
     height: 40px;
+    margin: 0 3px;
     border-radius: 2em !important;
     transition: 0.3s;
 }
