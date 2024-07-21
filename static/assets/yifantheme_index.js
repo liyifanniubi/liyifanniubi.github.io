@@ -1,11 +1,13 @@
 const style = document.createElement("style");
 style.innerHTML = `
+
+/* header布局*/
 .blogTitle {
     display: unset;
 }
 
 #header {
-    height: 300px;
+    height: 340px;
 }
 
 #header h1 {
@@ -15,6 +17,13 @@ style.innerHTML = `
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.title-right {
+    margin: unset;
+    margin-top: 290px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .avatar {
@@ -28,11 +37,13 @@ style.innerHTML = `
     margin-left: unset;
 }
 
+/* 背景图片 */
 html {
     background: url('https://img.liyifan.xyz/file/a2262c314f6a8bd592eba.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
+/* 主体布局 */
 body {
     margin: 30px auto;
     padding: 20px;
@@ -62,8 +73,51 @@ body {
     transition: 0.5s;
 }
 
+/* 分页条 */
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus, .pagination em:hover, .pagination em:focus {
     border-color: rebeccapurple;
 }
+
+/* 右上角按钮 */
+div.title-right .btn {
+    display: inline-flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 2em !important;
+    transition: 0.3s;
+}
+
+div.title-right .btn:hover {
+    width: auto;
+    border-radius: 2em !important;
+    background-color: #3cd2cd;
+}
+
+div.title-right .btn .btndescription {
+    display: none;
+    margin-left: 3px;
+    white-space: nowrap;
+    color: black;
+    font-weight: bold;
+}
+
+div.title-right .btn:hover .btndescription {
+    display: inline;
+}
+
 `;
 document.head.appendChild(style);
+
+//右上角按钮描述
+let topright_buttons = document.querySelectorAll(".title-right a.btn");
+
+topright_buttons.forEach(button => {
+    var title = button.getAttribute('title');
+    if (title) {
+        var btndescription = document.createElement('span');
+        btndescription.className = 'btndescription';
+        btndescription.textContent = title;
+        button.appendChild(btndescription);
+    }
+});
