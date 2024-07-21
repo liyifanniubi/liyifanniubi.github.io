@@ -21,7 +21,7 @@ style.innerHTML = `
 
 .title-right {
     margin: unset;
-    margin-top: 290px;
+    margin-top: 295px;
     margin-left: 50%;
     transform: translateX(-50%);
 }
