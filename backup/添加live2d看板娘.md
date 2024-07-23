@@ -44,44 +44,7 @@
 
 > 里面包含了几个开源的模型
 
-### 2. 配置`model_list.json`来选择自己想要的模型（可选）
 
-删除models内不需要的模型，同时删除message中的消息。比如变成这样：
-
-```json
-{
-    "models": [
-        [
-            "HyperdimensionNeptunia/neptune_classic",
-            "HyperdimensionNeptunia/nepnep",
-            "HyperdimensionNeptunia/neptune_santa",
-            "HyperdimensionNeptunia/nepmaid",
-            "HyperdimensionNeptunia/nepswim",
-            "HyperdimensionNeptunia/noir_classic",
-            "HyperdimensionNeptunia/noir",
-            "HyperdimensionNeptunia/noir_santa",
-            "HyperdimensionNeptunia/noireswim",
-            "HyperdimensionNeptunia/blanc_classic",
-            "HyperdimensionNeptunia/blanc_normal",
-            "HyperdimensionNeptunia/blanc_swimwear",
-            "HyperdimensionNeptunia/vert_classic",
-            "HyperdimensionNeptunia/vert_normal",
-            "HyperdimensionNeptunia/vert_swimwear",
-            "HyperdimensionNeptunia/nepgear",
-            "HyperdimensionNeptunia/nepgear_extra",
-            "HyperdimensionNeptunia/nepgearswim",
-            "HyperdimensionNeptunia/histoire",
-            "HyperdimensionNeptunia/histoirenohover"
-        ]
-    ],
-    "messages": [
-        "Nep! Nep! 超次元游戏：海王星 系列"
-    ]
-}
-```
-
-> [!CAUTION]
-> `json`中键值的最后一个不能加逗号！！！
 
 ## 三、加入`js`脚本
 
