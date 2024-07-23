@@ -79,7 +79,7 @@
 }
 ```
 
-`models`的顺序就是切换的顺序，默认展示第一个模型，而`texture`会随机选择
+`models`的顺序就是切换的顺序，默认展示第一个元素中随机选择的一个模型，然后按顺序切换
 
 > [!CAUTION]
 > 原项目中的`waifu-tips.js`有个小bug，[默认modelId为1会导致在模型只有一个的情况下无法正确加载模型 #135](https://github.com/stevenjoezhang/live2d-widget/issues/135)，会导致只有一个模型时无法正确加载，替换为[waifu-tips.js](https://blog.liyifan.xyz/live2d/waifu-tips.js)即可解决
