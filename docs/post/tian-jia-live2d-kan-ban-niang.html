@@ -39,7 +39,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     .postTitle{font-size:24px;}
 }
 </style>
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}</style><style>.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}</style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}</style><style>.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}</style><style>.markdown-alert.markdown-alert-caution {border-left-color:var(--borderColor-danger-emphasis, var(--color-danger-emphasis));background-color:var(--color-danger-subtle);}.markdown-alert.markdown-alert-caution .markdown-alert-title {color: var(--fgColor-danger,var(--color-danger-fg));}</style>
 
 
 
@@ -103,6 +103,40 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <blockquote>
 <p>里面包含了几个开源的模型</p>
 </blockquote>
+<h3>2. 配置model_list.json来选择自己想要的模型（可选）</h3>
+<p>删除models内不需要的模型以及材质，同时删除message中的消息。比如变成这样：</p>
+<div class="highlight highlight-source-json"><pre class="notranslate">{
+    <span class="pl-ent">"models"</span>: [
+        [
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/neptune_classic<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepnep<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/neptune_santa<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepmaid<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepswim<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/noir_classic<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/noir<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/noir_santa<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/noireswim<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/blanc_classic<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/blanc_normal<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/blanc_swimwear<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/vert_classic<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/vert_normal<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/vert_swimwear<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepgear<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepgear_extra<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepgearswim<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/histoire<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/histoirenohover<span class="pl-pds">"</span></span>
+        ]
+    ],
+    <span class="pl-ent">"messages"</span>: [
+        <span class="pl-s"><span class="pl-pds">"</span>Nep! Nep! 超次元游戏：海王星 系列<span class="pl-pds">"</span></span>
+    ]
+}</pre></div>
+<p><code class="notranslate">models</code>的顺序就是切换的顺序，默认展示第一个模型，而<code class="notranslate">texture</code>会随机选择</p>
+<div class="markdown-alert markdown-alert-caution"><p class="markdown-alert-title"><svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p><p>原项目中的<code class="notranslate">waifu-tips.js</code>有个小bug，<a href="https://github.com/stevenjoezhang/live2d-widget/issues/135" data-hovercard-type="issue" data-hovercard-url="/stevenjoezhang/live2d-widget/issues/135/hovercard">默认modelId为1会导致在模型只有一个的情况下无法正确加载模型 #135</a>，会导致只有一个模型时无法正确加载，替换为<a href="https://blog.liyifan.xyz/live2d/waifu-tips.js" rel="nofollow">waifu-tips.js</a>即可解决</p>
+</div>
 <h2>三、加入<code class="notranslate">js</code>脚本</h2>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span> <span class="pl-c1">&gt;=</span> <span class="pl-c1">1250</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
     <span class="pl-k">var</span> <span class="pl-s1">script</span> <span class="pl-c1">=</span> <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">createElement</span><span class="pl-kos">(</span><span class="pl-s">'script'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
