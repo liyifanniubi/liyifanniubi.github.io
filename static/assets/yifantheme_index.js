@@ -1,4 +1,4 @@
-const style = document.createElement("style");
+let style = document.createElement("style");
 style.innerHTML = `
 
 /* header布局*/
