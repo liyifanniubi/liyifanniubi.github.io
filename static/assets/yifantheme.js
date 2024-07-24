@@ -242,8 +242,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let style = document.createElement("style");
         style.innerHTML = `
 
-        /* header布局*/
-
 
         /* 背景图片 */
         html {
