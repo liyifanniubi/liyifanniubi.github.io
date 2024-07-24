@@ -290,6 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         .markdown-body .highlight pre, .markdown-body pre {
             background: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
         }
 
         .markdown-body code, .markdown-body tt {
