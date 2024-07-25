@@ -295,6 +295,10 @@ document.addEventListener('DOMContentLoaded', function() {
             background-color: rgb(141 150 161 / 20%);
         }
 
+        video {
+            border-radius: 10px;
+        }
+
         /* 右上角按钮 */
         div.title-right .btn {
             display: inline-flex;
