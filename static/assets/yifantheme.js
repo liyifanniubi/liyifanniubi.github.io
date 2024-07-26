@@ -360,6 +360,14 @@ document.addEventListener('DOMContentLoaded', function() {
         .title-right {
             align-items: flex-end;
         }
+
+        @media (max-width: 600px) {
+            .tagTitle {
+                display: unset;
+                font-size: 14px;
+                white-space: unset;
+            }
+        }
         
         
         /* 背景图片 */
