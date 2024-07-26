@@ -82,7 +82,7 @@ body {
 div.title-right .btn {
     display: inline-flex;
     align-items: center;
-    width: 40px;
+    width: auto;
     height: 40px;
     margin: 0 3px;
     border-radius: 2em !important;
