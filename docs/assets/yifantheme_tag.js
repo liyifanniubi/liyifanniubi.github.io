@@ -2,40 +2,11 @@ let style = document.createElement("style");
 style.innerHTML = `
 
 /* header布局*/
-.blogTitle {
-    display: unset;
-}
-
-#header {
-    height: 340px;
-}
-
-#header h1 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .title-right {
-    margin: unset;
-    margin-top: 295px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    align-items: flex-end;
 }
 
-.avatar {
-    width: 200px;
-    height: 200px;
-}
-
-#header h1 a {
-    margin-top: 30px;
-    font-family: fantasy;
-    margin-left: unset;
-}
 
 /* 背景图片 */
 html {
@@ -73,10 +44,6 @@ body {
     transition: 0.5s;
 }
 
-/* 分页条 */
-.pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus, .pagination em:hover, .pagination em:focus {
-    border-color: rebeccapurple;
-}
 
 /* 右上角按钮 */
 div.title-right .btn {
@@ -107,6 +74,23 @@ div.title-right .btn:hover .btndescription {
     display: inline;
 }
 
+.subnav-search-input {
+    border-radius: 2em;
+    float: unset !important;
+}
+
+.subnav-search-icon {
+    top: 9px;
+}
+
+button.btn.float-left {
+    display: none;
+}
+
+.subnav-search {
+    width: unset; 
+    height: 36px;
+}
 `;
 document.head.appendChild(style);
 
@@ -120,5 +104,15 @@ topright_buttons.forEach(button => {
         btndescription.className = 'btndescription';
         btndescription.textContent = title;
         button.appendChild(btndescription);
+    }
+});
+
+// 搜索框回车触发
+let input = document.getElementsByClassName("form-control subnav-search-input float-left")[0];
+let button = document.getElementsByClassName("btn float-left")[0];
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        button.click();
     }
 });
