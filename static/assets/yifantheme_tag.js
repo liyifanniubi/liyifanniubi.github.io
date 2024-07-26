@@ -7,6 +7,14 @@ style.innerHTML = `
     align-items: flex-end;
 }
 
+@media (max-width: 600px) {
+    .tagTitle {
+        display: unset;
+        font-size: 14px;
+        white-space: unset;
+    }
+}
+
 
 /* 背景图片 */
 html {
