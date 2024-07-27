@@ -133,15 +133,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
                 <span class="pl-kos">}</span>
             <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-            <span class="pl-c">// 监听复制成功事件</span>
+            <span class="pl-c">// 监听成功事件</span>
             <span class="pl-s1">clipboard</span><span class="pl-kos">.</span><span class="pl-en">on</span><span class="pl-kos">(</span><span class="pl-s">'success'</span><span class="pl-kos">,</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">e</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
                 <span class="pl-en">handleCopySuccess</span><span class="pl-kos">(</span><span class="pl-s1">copyButton</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
                 <span class="pl-s1">e</span><span class="pl-kos">.</span><span class="pl-en">clearSelection</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
             <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
+            <span class="pl-k">var</span> <span class="pl-s1">timeout</span><span class="pl-kos">;</span>
             <span class="pl-c">// 监听代码块滚动事件</span>
             <span class="pl-s1">codeBlock</span><span class="pl-kos">.</span><span class="pl-en">addEventListener</span><span class="pl-kos">(</span><span class="pl-s">'scroll'</span><span class="pl-kos">,</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
                 <span class="pl-en">adjustButtonPosition</span><span class="pl-kos">(</span><span class="pl-s1">copyButton</span><span class="pl-kos">,</span> <span class="pl-s1">codeBlock</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+                <span class="pl-en">hideButtonOnScroll</span><span class="pl-kos">(</span><span class="pl-s1">timeout</span><span class="pl-kos">,</span> <span class="pl-s1">copyButton</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
             <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
         <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-kos">}</span><span class="pl-kos">;</span>
@@ -178,9 +180,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 1秒</span>
     <span class="pl-kos">}</span>
 
-    <span class="pl-c">// 调整按钮位置</span>
+    <span class="pl-c">// 滚动时调整按钮位置</span>
     <span class="pl-k">function</span> <span class="pl-en">adjustButtonPosition</span><span class="pl-kos">(</span><span class="pl-s1">button</span><span class="pl-kos">,</span> <span class="pl-s1">codeBlock</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
         <span class="pl-s1">button</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">right</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-c1">10</span> <span class="pl-c1">-</span> <span class="pl-s1">codeBlock</span><span class="pl-kos">.</span><span class="pl-c1">scrollLeft</span><span class="pl-kos">)</span> <span class="pl-c1">+</span> <span class="pl-s">'px'</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+
+    <span class="pl-c">//滚动时复制按钮小时</span>
+    <span class="pl-k">function</span> <span class="pl-en">hideButtonOnScroll</span><span class="pl-kos">(</span><span class="pl-s1">timeout</span><span class="pl-kos">,</span><span class="pl-s1">copyButton</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-en">clearTimeout</span><span class="pl-kos">(</span><span class="pl-s1">timeout</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-s1">copyButton</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">display</span> <span class="pl-c1">=</span> <span class="pl-s">'none'</span><span class="pl-kos">;</span>
+        <span class="pl-s1">timeout</span> <span class="pl-c1">=</span> <span class="pl-en">setTimeout</span><span class="pl-kos">(</span><span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+            <span class="pl-s1">copyButton</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">display</span> <span class="pl-c1">=</span> <span class="pl-s">'flex'</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
     <span class="pl-kos">}</span>
 <span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
 <h2>使用</h2>
