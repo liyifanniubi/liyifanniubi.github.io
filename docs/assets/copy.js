@@ -64,15 +64,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            // 监听复制成功事件
+            // 监听成功事件
             clipboard.on('success', function(e) {
                 handleCopySuccess(copyButton);
                 e.clearSelection();
             });
 
+            var timeout;
             // 监听代码块滚动事件
             codeBlock.addEventListener('scroll', function() {
                 adjustButtonPosition(copyButton, codeBlock);
+                hideButtonOnScroll(timeout, copyButton);
             });
         });
     };
@@ -109,8 +111,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000); // 1秒
     }
 
-    // 调整按钮位置
+    // 滚动时调整按钮位置
     function adjustButtonPosition(button, codeBlock) {
         button.style.right = (10 - codeBlock.scrollLeft) + 'px';
+    }
+
+    //滚动时复制按钮小时
+    function hideButtonOnScroll(timeout,copyButton) {
+        clearTimeout(timeout);
+        copyButton.style.display = 'none';
+        timeout = setTimeout(function() {
+            copyButton.style.display = 'flex';
+        }, 1000);
     }
 });
