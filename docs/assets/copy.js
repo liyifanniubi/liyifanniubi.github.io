@@ -70,15 +70,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 e.clearSelection();
             });
 
-            var timeout;
             // 监听代码块滚动事件
             codeBlock.addEventListener('scroll', function() {
                 adjustButtonPosition(copyButton, codeBlock);
-                clearTimeout(timeout);
-                copyButton.style.display = 'none';
-                timeout = setTimeout(function() {
-                    copyButton.style.display = 'flex';
-                }, 1000);
+                hideButton(copyButton)
             });
         });
     };
@@ -118,5 +113,14 @@ document.addEventListener("DOMContentLoaded", function() {
     // 滚动时调整按钮位置
     function adjustButtonPosition(button, codeBlock) {
         button.style.right = (10 - codeBlock.scrollLeft) + 'px';
+    }
+
+    // 滚动时隐藏按钮
+    function hideButton(button) {
+        clearTimeout(button.timeout);
+        button.style.display = 'none';
+        button.timeout = setTimeout(function() {
+            button.style.display = 'flex';
+        }, 1000);
     }
 });
