@@ -86,17 +86,11 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             codeblock.addEventListener('scroll', function() {
-                var button = codeblock.querySelector('.copy-button');
-                if (button) {
-                    button.style.right = (10 - codeblock.scrollLeft) + 'px';
-                } else {
-                    button = codeblock.querySelector('.copied');
-                    button.style.right = (10 - codeblock.scrollLeft) + 'px';
-                }
+                var button = codeblock.querySelector('button');
+                button.style.right = (10 - codeblock.scrollLeft) + 'px';
             });
 
         });
-
 
     };
 });
