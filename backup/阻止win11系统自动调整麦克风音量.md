@@ -104,9 +104,16 @@ import json
 import os
 
 
-mic = AudioUtilities.GetMicrophone()
-interface = mic.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
-volume = cast(interface, POINTER(IAudioEndpointVolume))
+while True:
+    try:
+        mic = AudioUtilities.GetMicrophone()
+        interface = mic.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+        volume = cast(interface, POINTER(IAudioEndpointVolume))
+        break
+    except:
+        time.sleep(10)
+        continue
+
 
 try:
     with open('config.json', 'r',encoding='utf-8') as f:
@@ -135,6 +142,7 @@ if not os.path.exists('config.json'):
 print('开始监听...')
 
 while True:
+    # 获取当前音量值
     v_v = volume.GetMasterVolumeLevel()
     #print('MIC音量值为', v_v)
 
@@ -145,6 +153,7 @@ while True:
         print(f'{hour}:{minute} 麦克风音量调至{target}')
 
     time.sleep(sleep)
+
 ```
 
 ### 5. pyinstaller打包

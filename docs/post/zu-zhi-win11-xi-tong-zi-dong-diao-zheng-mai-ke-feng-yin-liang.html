@@ -152,9 +152,16 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-k">import</span> <span class="pl-s1">os</span>
 
 
-<span class="pl-s1">mic</span> <span class="pl-c1">=</span> <span class="pl-v">AudioUtilities</span>.<span class="pl-v">GetMicrophone</span>()
-<span class="pl-s1">interface</span> <span class="pl-c1">=</span> <span class="pl-s1">mic</span>.<span class="pl-v">Activate</span>(<span class="pl-v">IAudioEndpointVolume</span>.<span class="pl-s1">_iid_</span>, <span class="pl-v">CLSCTX_ALL</span>, <span class="pl-c1">None</span>)
-<span class="pl-s1">volume</span> <span class="pl-c1">=</span> <span class="pl-en">cast</span>(<span class="pl-s1">interface</span>, <span class="pl-v">POINTER</span>(<span class="pl-v">IAudioEndpointVolume</span>))
+<span class="pl-k">while</span> <span class="pl-c1">True</span>:
+    <span class="pl-k">try</span>:
+        <span class="pl-s1">mic</span> <span class="pl-c1">=</span> <span class="pl-v">AudioUtilities</span>.<span class="pl-v">GetMicrophone</span>()
+        <span class="pl-s1">interface</span> <span class="pl-c1">=</span> <span class="pl-s1">mic</span>.<span class="pl-v">Activate</span>(<span class="pl-v">IAudioEndpointVolume</span>.<span class="pl-s1">_iid_</span>, <span class="pl-v">CLSCTX_ALL</span>, <span class="pl-c1">None</span>)
+        <span class="pl-s1">volume</span> <span class="pl-c1">=</span> <span class="pl-en">cast</span>(<span class="pl-s1">interface</span>, <span class="pl-v">POINTER</span>(<span class="pl-v">IAudioEndpointVolume</span>))
+        <span class="pl-k">break</span>
+    <span class="pl-k">except</span>:
+        <span class="pl-s1">time</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">10</span>)
+        <span class="pl-k">continue</span>
+
 
 <span class="pl-k">try</span>:
     <span class="pl-k">with</span> <span class="pl-en">open</span>(<span class="pl-s">'config.json'</span>, <span class="pl-s">'r'</span>,<span class="pl-s1">encoding</span><span class="pl-c1">=</span><span class="pl-s">'utf-8'</span>) <span class="pl-k">as</span> <span class="pl-s1">f</span>:
@@ -183,6 +190,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-en">print</span>(<span class="pl-s">'开始监听...'</span>)
 
 <span class="pl-k">while</span> <span class="pl-c1">True</span>:
+    <span class="pl-c"># 获取当前音量值</span>
     <span class="pl-s1">v_v</span> <span class="pl-c1">=</span> <span class="pl-s1">volume</span>.<span class="pl-v">GetMasterVolumeLevel</span>()
     <span class="pl-c">#print('MIC音量值为', v_v)</span>
 
