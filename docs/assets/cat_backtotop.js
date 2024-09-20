@@ -1180,11 +1180,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function scrollFunction() {
     if (window.innerWidth < 1000) {
-      btn.style.display = "none";
+      btn.style.top = '-999px';
     } else if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      btn.style.display = "block";
+      btn.style.top = '-100px';
     } else {
-      btn.style.display = "none";
+      btn.style.top = '-999px';
     }
   }
   
@@ -1200,11 +1200,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
   // 当窗口大小改变时检查窗口宽度
   window.onresize = function() {
-    if (window.innerWidth < 1000) {
-      btn.style.display = "none";
-    } else {
-      scrollFunction();
-    }
+    scrollFunction();
   };
 
 // 回到顶
@@ -1222,4 +1218,3 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
-
