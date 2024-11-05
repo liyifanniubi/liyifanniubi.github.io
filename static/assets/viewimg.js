@@ -9,4 +9,4 @@ document.addEventListener("DOMContentLoaded", function() {
     initial.type = 'text/javascript';
     initial.textContent = 'window.ViewImage && ViewImage.init(\'img\');';
     document.body.appendChild(initial);
-}
+});
