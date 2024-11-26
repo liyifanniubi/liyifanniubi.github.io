@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>LIYIFAN的备忘录</title><link>https://blog.liyifan.xyz</link><description>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</description><copyright>LIYIFAN的备忘录</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://img.liyifan.xyz/file/899bc692dbb6d6d7b994f.jpg</url><title>avatar</title><link>https://blog.liyifan.xyz</link></image><lastBuildDate>Tue, 26 Nov 2024 20:47:46 +0000</lastBuildDate><managingEditor>LIYIFAN的备忘录</managingEditor><ttl>60</ttl><webMaster>LIYIFAN的备忘录</webMaster><item><title>【露玛岛】添加点位传送功能</title><link>https://blog.liyifan.xyz/post/%E3%80%90-lu-ma-dao-%E3%80%91-tian-jia-dian-wei-chuan-song-gong-neng.html</link><description>肝了两天之后觉得深感跑图太慢，于是决定折腾一个传送功能出来，~~其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈~~&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>LIYIFAN的备忘录</title><link>https://blog.liyifan.xyz</link><description>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</description><copyright>LIYIFAN的备忘录</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://img.liyifan.xyz/file/899bc692dbb6d6d7b994f.jpg</url><title>avatar</title><link>https://blog.liyifan.xyz</link></image><lastBuildDate>Tue, 26 Nov 2024 20:54:33 +0000</lastBuildDate><managingEditor>LIYIFAN的备忘录</managingEditor><ttl>60</ttl><webMaster>LIYIFAN的备忘录</webMaster><item><title>【露玛岛】添加点位传送功能</title><link>https://blog.liyifan.xyz/post/%E3%80%90-lu-ma-dao-%E3%80%91-tian-jia-dian-wei-chuan-song-gong-neng.html</link><description>肝了两天之后觉得深感跑图太慢，于是决定折腾一个传送功能出来，~~其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈~~&#13;
 &#13;
 ### 1. 用dnspy打开`AzureValley.dll`&#13;
 &#13;
@@ -67,8 +67,7 @@
 &#13;
 ### 完成&#13;
 &#13;
-![Spacewar - 2024-11-27 04-23-13__52pct_smaller](https://github.com/user-attachments/assets/d4be96e4-e985-4da2-8d14-38f55bc122c8)&#13;
-&#13;
+&lt;img src='https://github.com/user-attachments/assets/d4be96e4-e985-4da2-8d14-38f55bc122c8' width='100%'&gt;&#13;
 &#13;
 `Gmeek-html&lt;img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMGZ0YzurGLMBg6_mFW_far59QJeq0AAl2-MRs_zDhWMsQUA9DAMOkBAAMCAAN4AAM2BA' alt='img' width='100%'&gt;`。</description><guid isPermaLink="true">https://blog.liyifan.xyz/post/%E3%80%90-lu-ma-dao-%E3%80%91-tian-jia-dian-wei-chuan-song-gong-neng.html</guid><pubDate>Tue, 26 Nov 2024 20:39:00 +0000</pubDate></item><item><title>小米ax3000t v2路由器安装shellcrash</title><link>https://blog.liyifan.xyz/post/xiao-mi-ax3000t%20v2-lu-you-qi-an-zhuang-shellcrash.html</link><description>固件版本 1.0.84&#13;
 &#13;
