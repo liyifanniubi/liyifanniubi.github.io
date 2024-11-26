@@ -7,7 +7,7 @@
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     <script src='https://blog.liyifan.xyz/assets/GmeekBSZ.js'></script><script src='https://blog.liyifan.xyz/assets/yifantheme.js'></script><script src='https://blog.liyifan.xyz/assets/live2d.js'></script>
     <link rel="icon" href="https://img.liyifan.xyz/file/899bc692dbb6d6d7b994f.jpg">
-<meta name="description" content="肝了两天之后觉得深感跑图太慢，于是决定折腾一个传送功能出来，~~其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈~~
+<meta name="description" content="和朋友们肝了两天之后觉得深感跑图太慢，于是决定折腾一个传送功能出来，~~其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈~~
 
 ### 1. 用dnspy打开`AzureValley.dll`
 
@@ -76,10 +76,18 @@
 ### 完成
 
 <img src='https://github.com/user-attachments/assets/d4be96e4-e985-4da2-8d14-38f55bc122c8' width='100%'>
+
+### 增加无敌功能（慎加，影响游戏平衡）
+
+在`PlayerController`类中找到`CanBeKilled`
+
+改为return false;
+
+`Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMHZ0Y8e-gUfh9OefZDHwg8uzcBRRAAAmS-MRs_zDhWeScke8n55moBAAMCAAN4AAM2BA' alt='img' width='100%'>`
 
 `Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMGZ0YzurGLMBg6_mFW_far59QJeq0AAl2-MRs_zDhWMsQUA9DAMOkBAAMCAAN4AAM2BA' alt='img' width='100%'>`。">
 <meta property="og:title" content="【露玛岛】添加点位传送功能">
-<meta property="og:description" content="肝了两天之后觉得深感跑图太慢，于是决定折腾一个传送功能出来，~~其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈~~
+<meta property="og:description" content="和朋友们肝了两天之后觉得深感跑图太慢，于是决定折腾一个传送功能出来，~~其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈~~
 
 ### 1. 用dnspy打开`AzureValley.dll`
 
@@ -148,6 +156,14 @@
 ### 完成
 
 <img src='https://github.com/user-attachments/assets/d4be96e4-e985-4da2-8d14-38f55bc122c8' width='100%'>
+
+### 增加无敌功能（慎加，影响游戏平衡）
+
+在`PlayerController`类中找到`CanBeKilled`
+
+改为return false;
+
+`Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMHZ0Y8e-gUfh9OefZDHwg8uzcBRRAAAmS-MRs_zDhWeScke8n55moBAAMCAAN4AAM2BA' alt='img' width='100%'>`
 
 `Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMGZ0YzurGLMBg6_mFW_far59QJeq0AAl2-MRs_zDhWMsQUA9DAMOkBAAMCAAN4AAM2BA' alt='img' width='100%'>`。">
 <meta property="og:type" content="article">
@@ -214,7 +230,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>肝了两天之后觉得深感跑图太慢，于是决定折腾一个传送功能出来，<del>其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈</del></p>
+<div class="markdown-body" id="postBody"><p>和朋友们肝了两天之后觉得深感跑图太慢，于是决定折腾一个传送功能出来，<del>其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈</del></p>
 <h3>1. 用dnspy打开<code class="notranslate">AzureValley.dll</code></h3>
 <p>"Luma Island\Luma Island_Data\Managed\AzureValley.dll"</p>
 <blockquote>
@@ -274,6 +290,10 @@ F6 - 山地入口</p>
 </div>
 <h3>完成</h3>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/d4be96e4-e985-4da2-8d14-38f55bc122c8"><img src="https://github.com/user-attachments/assets/d4be96e4-e985-4da2-8d14-38f55bc122c8" width="100%" style="max-width: 100%;"></a></p>
+<h3>增加无敌功能（慎加，影响游戏平衡）</h3>
+<p>在<code class="notranslate">PlayerController</code>类中找到<code class="notranslate">CanBeKilled</code></p>
+<p>改为return false;</p>
+<p><img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMHZ0Y8e-gUfh9OefZDHwg8uzcBRRAAAmS-MRs_zDhWeScke8n55moBAAMCAAN4AAM2BA" alt="img" width="100%"></p>
 <p><img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMGZ0YzurGLMBg6_mFW_far59QJeq0AAl2-MRs_zDhWMsQUA9DAMOkBAAMCAAN4AAM2BA" alt="img" width="100%"></p></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
