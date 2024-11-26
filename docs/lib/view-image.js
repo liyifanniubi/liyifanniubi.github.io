@@ -96,6 +96,12 @@
                     loadImage(images[index]);
                     $el.querySelector('.view-image-index').innerHTML = index + 1;
                 }
+                else if (e.target.closest('.view-image-lead')) {
+                    window.removeEventListener("keydown", keyFn);
+                    $el.onclick = null;
+                    $el.classList.add('view-image__out');
+                    setTimeout(() => $el.remove(), 290);
+                }
             };
         }
     }
