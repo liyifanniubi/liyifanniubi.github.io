@@ -164,34 +164,34 @@ F6 - 山地入口</p>
 </div>
 <h4>2. 存点传送</h4>
 <div class="highlight highlight-source-cs"><pre class="notranslate">	<span class="pl-k">private</span> <span class="pl-smi">float3</span> <span class="pl-s1">cundian9</span><span class="pl-kos">;</span>
-	<span class="pl-k">private</span> <span class="pl-smi">Level</span> <span class="pl-s1">level9</span><span class="pl-kos">;</span>
+	<span class="pl-k">private</span> <span class="pl-smi">Level</span> <span class="pl-s1">levelf9</span><span class="pl-kos">;</span>
 	<span class="pl-k">private</span> <span class="pl-smi">bool</span> <span class="pl-s1">f9pressed</span><span class="pl-kos">;</span>
 
 	<span class="pl-k">public</span> <span class="pl-smi">void</span> <span class="pl-en">CundianTeleport9</span><span class="pl-kos">(</span><span class="pl-kos">)</span>
 	<span class="pl-kos">{</span>
 		<span class="pl-k">if</span> <span class="pl-kos">(</span>Keyboard<span class="pl-kos">.</span>current<span class="pl-kos">.</span>backspaceKey<span class="pl-kos">.</span>wasPressedThisFrame<span class="pl-kos">)</span>
 		<span class="pl-kos">{</span>
-			<span class="pl-k">this</span><span class="pl-kos">.</span>level9 <span class="pl-c1">=</span> <span class="pl-c1">null</span><span class="pl-kos">;</span>
+			<span class="pl-k">this</span><span class="pl-kos">.</span>levelf9 <span class="pl-c1">=</span> <span class="pl-c1">null</span><span class="pl-kos">;</span>
 			<span class="pl-k">return</span><span class="pl-kos">;</span>
 		<span class="pl-kos">}</span>
 		<span class="pl-k">if</span> <span class="pl-kos">(</span>Keyboard<span class="pl-kos">.</span>current<span class="pl-kos">.</span>f9Key<span class="pl-kos">.</span>wasPressedThisFrame<span class="pl-kos">)</span>
 		<span class="pl-kos">{</span>
-			<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-k">this</span><span class="pl-kos">.</span>level9 <span class="pl-c1">==</span> <span class="pl-c1">null</span><span class="pl-kos">)</span>
+			<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-k">this</span><span class="pl-kos">.</span>levelf9 <span class="pl-c1">==</span> <span class="pl-c1">null</span><span class="pl-kos">)</span>
 			<span class="pl-kos">{</span>
 				<span class="pl-smi">float3</span> <span class="pl-s1">postion</span> <span class="pl-c1">=</span> <span class="pl-k">base</span><span class="pl-kos">.</span>GameUI<span class="pl-kos">.</span>PlayerGameUI<span class="pl-kos">.</span>Player<span class="pl-kos">.</span>LevelPosition<span class="pl-kos">.</span>Position<span class="pl-kos">;</span>
 				<span class="pl-k">this</span><span class="pl-kos">.</span>cundian9 <span class="pl-c1">=</span> <span class="pl-s1">postion</span><span class="pl-kos">;</span>
-				<span class="pl-k">this</span><span class="pl-kos">.</span>level9 <span class="pl-c1">=</span> <span class="pl-k">this</span><span class="pl-kos">.</span>CurrentLevel<span class="pl-kos">;</span>
+				<span class="pl-k">this</span><span class="pl-kos">.</span>levelf9 <span class="pl-c1">=</span> <span class="pl-k">this</span><span class="pl-kos">.</span>CurrentLevel<span class="pl-kos">;</span>
 				<span class="pl-k">return</span><span class="pl-kos">;</span>
 			<span class="pl-kos">}</span>
-			<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-k">this</span><span class="pl-kos">.</span>CurrentLevel <span class="pl-c1">!=</span> <span class="pl-k">this</span><span class="pl-kos">.</span>level9<span class="pl-kos">)</span>
+			<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-k">this</span><span class="pl-kos">.</span>CurrentLevel <span class="pl-c1">!=</span> <span class="pl-k">this</span><span class="pl-kos">.</span>levelf9<span class="pl-kos">)</span>
 			<span class="pl-kos">{</span>
-				<span class="pl-k">base</span><span class="pl-kos">.</span>GameUI<span class="pl-kos">.</span>PlayerGameUI<span class="pl-kos">.</span>Player<span class="pl-kos">.</span><span class="pl-en">SetLevel</span><span class="pl-kos">(</span><span class="pl-k">this</span><span class="pl-kos">.</span>level9<span class="pl-kos">,</span> <span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-c1">true</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">Forget</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+				<span class="pl-k">base</span><span class="pl-kos">.</span>GameUI<span class="pl-kos">.</span>PlayerGameUI<span class="pl-kos">.</span>Player<span class="pl-kos">.</span><span class="pl-en">SetLevel</span><span class="pl-kos">(</span><span class="pl-k">this</span><span class="pl-kos">.</span>levelf9<span class="pl-kos">,</span> <span class="pl-c1">null</span><span class="pl-kos">,</span> <span class="pl-c1">true</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">Forget</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 			<span class="pl-kos">}</span>
 			<span class="pl-k">this</span><span class="pl-kos">.</span>f9pressed <span class="pl-c1">=</span> <span class="pl-c1">true</span><span class="pl-kos">;</span>
 		<span class="pl-kos">}</span>
 		<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-k">this</span><span class="pl-kos">.</span>f9pressed<span class="pl-kos">)</span>
 		<span class="pl-kos">{</span>
-			<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-k">this</span><span class="pl-kos">.</span>CurrentLevel <span class="pl-c1">!=</span> <span class="pl-k">this</span><span class="pl-kos">.</span>level9<span class="pl-kos">)</span>
+			<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-k">this</span><span class="pl-kos">.</span>CurrentLevel <span class="pl-c1">!=</span> <span class="pl-k">this</span><span class="pl-kos">.</span>levelf9<span class="pl-kos">)</span>
 			<span class="pl-kos">{</span>
 				<span class="pl-k">return</span><span class="pl-kos">;</span>
 			<span class="pl-kos">}</span>
