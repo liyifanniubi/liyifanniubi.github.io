@@ -7,165 +7,9 @@
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     <script src='https://blog.liyifan.xyz/assets/GmeekBSZ.js'></script><script src='https://blog.liyifan.xyz/assets/yifantheme.js'></script><script src='https://blog.liyifan.xyz/assets/live2d.js'></script>
     <link rel="icon" href="https://img.liyifan.xyz/file/899bc692dbb6d6d7b994f.jpg">
-<meta name="description" content="和朋友们肝了两天之后深感跑图太慢，于是决定折腾一个传送功能出来，~~其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈~~
-
-### 1. 用dnspy打开`AzureValley.dll`
-
-'Luma Island\Luma Island_Data\Managed\AzureValley.dll'
-> 和别的Unity游戏不太一样
-
-### 2. 找到`PlayerController`类
-
-`Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMEZ0YqJF9pMLfUYC8MGb1z7-pT8UEAAle-MRs_zDhWLZPYI3dri-oBAAMCAAN3AAM2BA' alt='img' width='100%'>`
-
-### 3. 编辑`PlayerController`类中的`Update()`方法
-
-```C#
-	private bool f4pressed;
-	private bool f5pressed;
-
-	public virtual void Update()
-	{
-		Level farm = GameState.Instance.GetLevel('FarmMap');
-		Level mountain = GameState.Instance.GetLevel('MountainMap');
-		Level forest = GameState.Instance.GetLevel('ForestMap');
-		Level town = GameState.Instance.GetLevel('Town');
-		if (Keyboard.current.f3Key.wasPressedThisFrame)
-		{
-			base.GameUI.PlayerGameUI.Player.SetLevel(farm, null, true).Forget();
-		}
-		if (Keyboard.current.f4Key.wasPressedThisFrame)
-		{
-			if (this.CurrentLevel != town)
-			{
-				base.GameUI.PlayerGameUI.Player.SetLevel(town, null, true).Forget();
-			}
-			this.f4pressed = true;
-		}
-		if (this.f4pressed && this.CurrentLevel == town)
-		{
-			this.f4pressed = false;
-			base.GameUI.PlayerGameUI.Player.TeleportWithFade(new LevelPosition(new float3(72.83f, 8.26f, 111.7f)), null, 0f);
-		}
-		if (Keyboard.current.f5Key.wasPressedThisFrame)
-		{
-			if (this.CurrentLevel != forest)
-			{
-				base.GameUI.PlayerGameUI.Player.SetLevel(forest, null, true).Forget();
-			}
-			this.f5pressed = true;
-		}
-		if (this.f5pressed && this.CurrentLevel == forest)
-		{
-			this.f5pressed = false;
-			base.GameUI.PlayerGameUI.Player.TeleportWithFade(new LevelPosition(new float3(55.77f, 13.74f, 104.07f)), null, 0f);
-		}
-		if (Keyboard.current.f6Key.wasPressedThisFrame)
-		{
-			base.GameUI.PlayerGameUI.Player.SetLevel(mountain, null, true).Forget();
-		}
-	}
-```
-
-> [!NOTE]
-> F3 - 家
-> F4 - 小镇广场
-> F5 - 森林洞穴入口
-> F6 - 山地入口
-
-### 完成
-
-<img src='https://github.com/user-attachments/assets/d4be96e4-e985-4da2-8d14-38f55bc122c8' width='100%'>
-
-### #增加无敌功能（慎加，影响游戏平衡）
-
-在`PlayerController`类中找到`CanBeKilled`
-
-改为`return false;`
-
-`Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMHZ0Y8e-gUfh9OefZDHwg8uzcBRRAAAmS-MRs_zDhWeScke8n55moBAAMCAAN4AAM2BA' alt='img' width='100%'>`
-
-`Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMGZ0YzurGLMBg6_mFW_far59QJeq0AAl2-MRs_zDhWMsQUA9DAMOkBAAMCAAN4AAM2BA' alt='img' width='100%'>`。">
+<meta name="description" content="和朋友们肝了两天之后深感跑图太慢，于是决定折腾一个传送功能出来，<span class='spoiler'>其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈</span>。">
 <meta property="og:title" content="【露玛岛】添加点位传送功能">
-<meta property="og:description" content="和朋友们肝了两天之后深感跑图太慢，于是决定折腾一个传送功能出来，~~其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈~~
-
-### 1. 用dnspy打开`AzureValley.dll`
-
-'Luma Island\Luma Island_Data\Managed\AzureValley.dll'
-> 和别的Unity游戏不太一样
-
-### 2. 找到`PlayerController`类
-
-`Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMEZ0YqJF9pMLfUYC8MGb1z7-pT8UEAAle-MRs_zDhWLZPYI3dri-oBAAMCAAN3AAM2BA' alt='img' width='100%'>`
-
-### 3. 编辑`PlayerController`类中的`Update()`方法
-
-```C#
-	private bool f4pressed;
-	private bool f5pressed;
-
-	public virtual void Update()
-	{
-		Level farm = GameState.Instance.GetLevel('FarmMap');
-		Level mountain = GameState.Instance.GetLevel('MountainMap');
-		Level forest = GameState.Instance.GetLevel('ForestMap');
-		Level town = GameState.Instance.GetLevel('Town');
-		if (Keyboard.current.f3Key.wasPressedThisFrame)
-		{
-			base.GameUI.PlayerGameUI.Player.SetLevel(farm, null, true).Forget();
-		}
-		if (Keyboard.current.f4Key.wasPressedThisFrame)
-		{
-			if (this.CurrentLevel != town)
-			{
-				base.GameUI.PlayerGameUI.Player.SetLevel(town, null, true).Forget();
-			}
-			this.f4pressed = true;
-		}
-		if (this.f4pressed && this.CurrentLevel == town)
-		{
-			this.f4pressed = false;
-			base.GameUI.PlayerGameUI.Player.TeleportWithFade(new LevelPosition(new float3(72.83f, 8.26f, 111.7f)), null, 0f);
-		}
-		if (Keyboard.current.f5Key.wasPressedThisFrame)
-		{
-			if (this.CurrentLevel != forest)
-			{
-				base.GameUI.PlayerGameUI.Player.SetLevel(forest, null, true).Forget();
-			}
-			this.f5pressed = true;
-		}
-		if (this.f5pressed && this.CurrentLevel == forest)
-		{
-			this.f5pressed = false;
-			base.GameUI.PlayerGameUI.Player.TeleportWithFade(new LevelPosition(new float3(55.77f, 13.74f, 104.07f)), null, 0f);
-		}
-		if (Keyboard.current.f6Key.wasPressedThisFrame)
-		{
-			base.GameUI.PlayerGameUI.Player.SetLevel(mountain, null, true).Forget();
-		}
-	}
-```
-
-> [!NOTE]
-> F3 - 家
-> F4 - 小镇广场
-> F5 - 森林洞穴入口
-> F6 - 山地入口
-
-### 完成
-
-<img src='https://github.com/user-attachments/assets/d4be96e4-e985-4da2-8d14-38f55bc122c8' width='100%'>
-
-### #增加无敌功能（慎加，影响游戏平衡）
-
-在`PlayerController`类中找到`CanBeKilled`
-
-改为`return false;`
-
-`Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMHZ0Y8e-gUfh9OefZDHwg8uzcBRRAAAmS-MRs_zDhWeScke8n55moBAAMCAAN4AAM2BA' alt='img' width='100%'>`
-
-`Gmeek-html<img src='https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png' data-src='https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMGZ0YzurGLMBg6_mFW_far59QJeq0AAl2-MRs_zDhWMsQUA9DAMOkBAAMCAAN4AAM2BA' alt='img' width='100%'>`。">
+<meta property="og:description" content="和朋友们肝了两天之后深感跑图太慢，于是决定折腾一个传送功能出来，<span class='spoiler'>其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈</span>。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://blog.liyifan.xyz/post/%E3%80%90-lu-ma-dao-%E3%80%91-tian-jia-dian-wei-chuan-song-gong-neng.html">
 <meta property="og:image" content="https://img.liyifan.xyz/file/899bc692dbb6d6d7b994f.jpg">
@@ -230,7 +74,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>和朋友们肝了两天之后深感跑图太慢，于是决定折腾一个传送功能出来，<del>其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈</del></p>
+<div class="markdown-body" id="postBody"><p>和朋友们肝了两天之后深感跑图太慢，于是决定折腾一个传送功能出来，<span>其实本来只想搞传送回家，后来图方便把所有常去的点位都搞上了哈哈哈</span>。</p>
 <h3>1. 用dnspy打开<code class="notranslate">AzureValley.dll</code></h3>
 <p>"Luma Island\Luma Island_Data\Managed\AzureValley.dll"</p>
 <blockquote>
