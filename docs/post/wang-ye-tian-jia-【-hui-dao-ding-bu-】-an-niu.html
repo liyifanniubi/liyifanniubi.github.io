@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://blog.liyifan.xyz/post/wang-ye-tian-jia-%E3%80%90-hui-dao-ding-bu-%E3%80%91-an-niu.html">
 <meta property="og:image" content="https://img.liyifan.xyz/file/899bc692dbb6d6d7b994f.jpg">
 <title>网页添加【回到顶部】按钮</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -38,7 +38,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     body {padding: 8px;}
     .postTitle{font-size:24px;}
 }
-
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
 </style>
 <style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}</style>
 
@@ -72,92 +82,90 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 Math.ceil()    “向上取整”， 小数部分直接舍去，并向正数部分进1<br>
 宽度限制在1000以上，给PC用，<del>手机它也用不着啊</del></p>
 </div>
-<pre lang="javascript" class="notranslate"><code class="notranslate">// 创建按钮
-var btn = document.createElement("button");
-btn.id = "backToTopBtn";
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-c">// 创建按钮</span>
+<span class="pl-k">var</span> <span class="pl-s1">btn</span> <span class="pl-c1">=</span> <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">createElement</span><span class="pl-kos">(</span><span class="pl-s">"button"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">id</span> <span class="pl-c1">=</span> <span class="pl-s">"backToTopBtn"</span><span class="pl-kos">;</span>
 
-// SVG图标作为按钮内容
-btn.innerHTML = '&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M12 19V5M5 12l7-7 7 7" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;';
+<span class="pl-c">// SVG图标作为按钮内容</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">innerHTML</span> <span class="pl-c1">=</span> <span class="pl-s">'&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M12 19V5M5 12l7-7 7 7" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/svg&gt;'</span><span class="pl-kos">;</span>
 
-// 按钮CSS
-btn.style.display = "none"; // 默认隐藏
-btn.style.position = "fixed"; // 固定在页面
-btn.style.bottom = "80px"; // 距离底部80像素
-btn.style.right = "20px"; // 距离右侧20像素
-btn.style.zIndex = "99"; // 确保按钮在最前
-btn.style.border = "2px solid black"; // 黑色边框
-btn.style.backgroundColor = "white"; // 按钮白色背景
-btn.style.borderRadius = "10px"; // 按钮圆角
-btn.style.cursor = "pointer"; // 鼠标悬停时光标变为指针
-btn.style.padding = "7px"; // 按钮内边距
-btn.style.outline = "none"; // 无外边框
-btn.style.transition = "background-color 0.5s, color 0.5s"; // 渐变效果
+<span class="pl-c">// 按钮CSS</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">display</span> <span class="pl-c1">=</span> <span class="pl-s">"none"</span><span class="pl-kos">;</span> <span class="pl-c">// 默认隐藏</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">position</span> <span class="pl-c1">=</span> <span class="pl-s">"fixed"</span><span class="pl-kos">;</span> <span class="pl-c">// 固定在页面</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">bottom</span> <span class="pl-c1">=</span> <span class="pl-s">"80px"</span><span class="pl-kos">;</span> <span class="pl-c">// 距离底部80像素</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">right</span> <span class="pl-c1">=</span> <span class="pl-s">"20px"</span><span class="pl-kos">;</span> <span class="pl-c">// 距离右侧20像素</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">zIndex</span> <span class="pl-c1">=</span> <span class="pl-s">"99"</span><span class="pl-kos">;</span> <span class="pl-c">// 确保按钮在最前</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">border</span> <span class="pl-c1">=</span> <span class="pl-s">"2px solid black"</span><span class="pl-kos">;</span> <span class="pl-c">// 黑色边框</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">backgroundColor</span> <span class="pl-c1">=</span> <span class="pl-s">"white"</span><span class="pl-kos">;</span> <span class="pl-c">// 按钮白色背景</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">borderRadius</span> <span class="pl-c1">=</span> <span class="pl-s">"10px"</span><span class="pl-kos">;</span> <span class="pl-c">// 按钮圆角</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">cursor</span> <span class="pl-c1">=</span> <span class="pl-s">"pointer"</span><span class="pl-kos">;</span> <span class="pl-c">// 鼠标悬停时光标变为指针</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">padding</span> <span class="pl-c1">=</span> <span class="pl-s">"7px"</span><span class="pl-kos">;</span> <span class="pl-c">// 按钮内边距</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">outline</span> <span class="pl-c1">=</span> <span class="pl-s">"none"</span><span class="pl-kos">;</span> <span class="pl-c">// 无外边框</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">transition</span> <span class="pl-c1">=</span> <span class="pl-s">"background-color 0.5s, color 0.5s"</span><span class="pl-kos">;</span> <span class="pl-c">// 渐变效果</span>
 
-// SVG样式
-var svg = btn.querySelector("svg");
-svg.style.transition = "stroke 0.5s";
+<span class="pl-c">// SVG样式</span>
+<span class="pl-k">var</span> <span class="pl-s1">svg</span> <span class="pl-c1">=</span> <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s">"svg"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">svg</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">transition</span> <span class="pl-c1">=</span> <span class="pl-s">"stroke 0.5s"</span><span class="pl-kos">;</span>
 
-// 悬停时反转颜色
-btn.onmouseover = function() {
-  btn.style.backgroundColor = "black";
-  svg.querySelector("path").style.stroke = "white";
-};
-btn.onmouseout = function() {
-  btn.style.backgroundColor = "white";
-  svg.querySelector("path").style.stroke = "black";
-};
+<span class="pl-c">// 悬停时反转颜色</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-en">onmouseover</span> <span class="pl-c1">=</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">backgroundColor</span> <span class="pl-c1">=</span> <span class="pl-s">"black"</span><span class="pl-kos">;</span>
+  <span class="pl-s1">svg</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s">"path"</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">stroke</span> <span class="pl-c1">=</span> <span class="pl-s">"white"</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-en">onmouseout</span> <span class="pl-c1">=</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">backgroundColor</span> <span class="pl-c1">=</span> <span class="pl-s">"white"</span><span class="pl-kos">;</span>
+  <span class="pl-s1">svg</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s">"path"</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">stroke</span> <span class="pl-c1">=</span> <span class="pl-s">"black"</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
 
-// 回到顶
-btn.addEventListener("click", clickHandler);
-function clickHandler(e) {
-    btn.style.backgroundColor = "black";
-    svg.querySelector("path").style.stroke = "white";
-    let timer = setInterval(function () {
-        var distanceY = document.documentElement.scrollTop || document.body.scrollTop;//兼容
-        if (distanceY == 0){
-            clearInterval(timer);
-            btn.style.backgroundColor = "white";
-            svg.querySelector("path").style.stroke = "black";
-            return;
-        } 
-        var speed = Math.ceil(distanceY/16) + 5;//speed先快后满
-        document.documentElement.scrollTop=distanceY-speed;
-    }, 10);
-}
+<span class="pl-c">// 回到顶</span>
+<span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-en">addEventListener</span><span class="pl-kos">(</span><span class="pl-s">"click"</span><span class="pl-kos">,</span> <span class="pl-s1">clickHandler</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">function</span> <span class="pl-en">clickHandler</span><span class="pl-kos">(</span><span class="pl-s1">e</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">backgroundColor</span> <span class="pl-c1">=</span> <span class="pl-s">"black"</span><span class="pl-kos">;</span>
+    <span class="pl-s1">svg</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s">"path"</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">stroke</span> <span class="pl-c1">=</span> <span class="pl-s">"white"</span><span class="pl-kos">;</span>
+    <span class="pl-k">let</span> <span class="pl-s1">timer</span> <span class="pl-c1">=</span> <span class="pl-en">setInterval</span><span class="pl-kos">(</span><span class="pl-k">function</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+        <span class="pl-k">var</span> <span class="pl-s1">distanceY</span> <span class="pl-c1">=</span> <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">documentElement</span><span class="pl-kos">.</span><span class="pl-c1">scrollTop</span> <span class="pl-c1">||</span> <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">.</span><span class="pl-c1">scrollTop</span><span class="pl-kos">;</span><span class="pl-c">//兼容</span>
+        <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">distanceY</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span><span class="pl-kos">)</span><span class="pl-kos">{</span>
+            <span class="pl-en">clearInterval</span><span class="pl-kos">(</span><span class="pl-s1">timer</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">backgroundColor</span> <span class="pl-c1">=</span> <span class="pl-s">"white"</span><span class="pl-kos">;</span>
+            <span class="pl-s1">svg</span><span class="pl-kos">.</span><span class="pl-en">querySelector</span><span class="pl-kos">(</span><span class="pl-s">"path"</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">stroke</span> <span class="pl-c1">=</span> <span class="pl-s">"black"</span><span class="pl-kos">;</span>
+            <span class="pl-k">return</span><span class="pl-kos">;</span>
+        <span class="pl-kos">}</span> 
+        <span class="pl-k">var</span> <span class="pl-s1">speed</span> <span class="pl-c1">=</span> <span class="pl-v">Math</span><span class="pl-kos">.</span><span class="pl-en">ceil</span><span class="pl-kos">(</span><span class="pl-s1">distanceY</span><span class="pl-c1">/</span><span class="pl-c1">16</span><span class="pl-kos">)</span> <span class="pl-c1">+</span> <span class="pl-c1">5</span><span class="pl-kos">;</span><span class="pl-c">//speed先快后满</span>
+        <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">documentElement</span><span class="pl-kos">.</span><span class="pl-c1">scrollTop</span><span class="pl-c1">=</span><span class="pl-s1">distanceY</span><span class="pl-c1">-</span><span class="pl-s1">speed</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">10</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
 
-// 将按钮添加到body
-document.body.appendChild(btn);
+<span class="pl-c">// 将按钮添加到body</span>
+<span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">.</span><span class="pl-en">appendChild</span><span class="pl-kos">(</span><span class="pl-s1">btn</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-function scrollFunction() {
-  if (window.innerWidth &lt; 1000) {
-    btn.style.display = "none";
-  } else if (document.body.scrollTop &gt; 20 || document.documentElement.scrollTop &gt; 20) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
-  }
-}
+<span class="pl-k">function</span> <span class="pl-en">scrollFunction</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">display</span> <span class="pl-c1">=</span> <span class="pl-s">"none"</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">.</span><span class="pl-c1">scrollTop</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">20</span> <span class="pl-c1">||</span> <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">documentElement</span><span class="pl-kos">.</span><span class="pl-c1">scrollTop</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">20</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">display</span> <span class="pl-c1">=</span> <span class="pl-s">"block"</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">display</span> <span class="pl-c1">=</span> <span class="pl-s">"none"</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span>
 
-// 滚动时检查是否显示按钮
-window.onscroll = function() {
-  scrollFunction();
-};
+<span class="pl-c">// 滚动时检查是否显示按钮</span>
+<span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-en">onscroll</span> <span class="pl-c1">=</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-en">scrollFunction</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span>
 
-// 初始检查窗口宽度
-if (window.innerWidth &gt;= 1000) {
-  scrollFunction();
-}
+<span class="pl-c">// 初始检查窗口宽度</span>
+<span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span> <span class="pl-c1">&gt;=</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-en">scrollFunction</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
 
-// 当窗口大小改变时检查窗口宽度
-window.onresize = function() {
-  if (window.innerWidth &lt; 1000) {
-    btn.style.display = "none";
-  } else {
-    scrollFunction();
-  }
-};
-
-</code></pre>
+<span class="pl-c">// 当窗口大小改变时检查窗口宽度</span>
+<span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-en">onresize</span> <span class="pl-c1">=</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">1000</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-s1">btn</span><span class="pl-kos">.</span><span class="pl-c1">style</span><span class="pl-kos">.</span><span class="pl-c1">display</span> <span class="pl-c1">=</span> <span class="pl-s">"none"</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+    <span class="pl-en">scrollFunction</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">;</span></pre></div>
 <h2>效果图</h2>
 <p><img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/file/4e1ae2ae8b35ee8050bc6.gif" alt="img" width="100%"></p>
 <p><img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/file/f1065b9e6a86af4448bce.jpg" alt="img" width="100%"></p></div>
@@ -185,7 +193,7 @@ if("07/03/2024"!=""){
 </script></div>
 </body>
 <script>
-var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
 var utterancesLoad=0;
 
 console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
@@ -235,7 +243,70 @@ function iFrameLoading(){
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
 
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
 
 </script>
 <script src='https://blog.liyifan.xyz/assets/cat_backtotop.js'></script><script src='https://blog.liyifan.xyz/assets/lazyload.js'></script><script src='https://blog.liyifan.xyz/assets/viewimg.js'></script>
