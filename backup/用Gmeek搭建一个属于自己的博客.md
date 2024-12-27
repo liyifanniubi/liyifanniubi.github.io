@@ -211,4 +211,10 @@ muted //静音
 poster //第一帧加载之前的预览图
 ```
 
+- 文章内标题跳转
+[修改配置文件](#三、修改配置文件)
+```
+[修改配置文件](#三、修改配置文件)
+```
 
+<!-- ##{"script":"<script src='https://blog.liyifan.xyz/assets/subtitle_id.js'></script>"}## -->
