@@ -216,4 +216,9 @@ poster //第一帧加载之前的预览图
 ```
 [修改配置文件](#三、修改配置文件)
 ```
+> [!CAUTION]
+> 如果没添加`TOC目录插件`，则需要添加一个给标题加id的插件
+> ```
+> <!-- ##{"script":"<script src='https://blog.liyifan.xyz/assets/subtitle_id.js'></script>"}## -->
+> ```
 
