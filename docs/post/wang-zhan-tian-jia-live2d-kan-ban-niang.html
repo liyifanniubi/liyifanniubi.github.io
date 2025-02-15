@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://blog.liyifan.xyz/post/wang-zhan-tian-jia-live2d-kan-ban-niang.html">
 <meta property="og:image" content="https://img.liyifan.xyz/file/899bc692dbb6d6d7b994f.jpg">
 <title>网站添加live2d看板娘</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -116,47 +116,45 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </blockquote>
 <h3>2. 配置model_list.json来选择自己想要的模型（可选）</h3>
 <p>删除models内不需要的模型以及材质，同时删除message中的消息。比如变成这样：</p>
-<pre lang="json" class="notranslate"><code class="notranslate">{
-    "models": [
+<div class="highlight highlight-source-json"><pre class="notranslate">{
+    <span class="pl-ent">"models"</span>: [
         [
-            "HyperdimensionNeptunia/neptune_classic",
-            "HyperdimensionNeptunia/nepnep",
-            "HyperdimensionNeptunia/neptune_santa",
-            "HyperdimensionNeptunia/nepmaid",
-            "HyperdimensionNeptunia/nepswim",
-            "HyperdimensionNeptunia/noir_classic",
-            "HyperdimensionNeptunia/noir",
-            "HyperdimensionNeptunia/noir_santa",
-            "HyperdimensionNeptunia/noireswim",
-            "HyperdimensionNeptunia/blanc_classic",
-            "HyperdimensionNeptunia/blanc_normal",
-            "HyperdimensionNeptunia/blanc_swimwear",
-            "HyperdimensionNeptunia/vert_classic",
-            "HyperdimensionNeptunia/vert_normal",
-            "HyperdimensionNeptunia/vert_swimwear",
-            "HyperdimensionNeptunia/nepgear",
-            "HyperdimensionNeptunia/nepgear_extra",
-            "HyperdimensionNeptunia/nepgearswim",
-            "HyperdimensionNeptunia/histoire",
-            "HyperdimensionNeptunia/histoirenohover"
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/neptune_classic<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepnep<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/neptune_santa<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepmaid<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepswim<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/noir_classic<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/noir<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/noir_santa<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/noireswim<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/blanc_classic<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/blanc_normal<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/blanc_swimwear<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/vert_classic<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/vert_normal<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/vert_swimwear<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepgear<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepgear_extra<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/nepgearswim<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/histoire<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>HyperdimensionNeptunia/histoirenohover<span class="pl-pds">"</span></span>
         ]
     ],
-    "messages": [
-        "Nep! Nep! 超次元游戏：海王星 系列"
+    <span class="pl-ent">"messages"</span>: [
+        <span class="pl-s"><span class="pl-pds">"</span>Nep! Nep! 超次元游戏：海王星 系列<span class="pl-pds">"</span></span>
     ]
-}
-</code></pre>
+}</pre></div>
 <p><code class="notranslate">models</code>的顺序就是切换的顺序，默认展示第一个元素中随机选择的一个模型，然后按顺序切换</p>
 <div class="markdown-alert markdown-alert-caution"><p class="markdown-alert-title"><svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p><p>原项目中的<code class="notranslate">waifu-tips.js</code>有个小bug，<a href="https://github.com/stevenjoezhang/live2d-widget/issues/135" data-hovercard-type="issue" data-hovercard-url="/stevenjoezhang/live2d-widget/issues/135/hovercard">默认modelId为1会导致在模型只有一个的情况下无法正确加载模型 #135</a>，会导致只有一个模型时无法正确加载，替换为<a href="https://blog.liyifan.xyz/live2d/waifu-tips.js" rel="nofollow">waifu-tips.js</a>即可解决</p>
 </div>
 <h2>三、加入<code class="notranslate">js</code>脚本</h2>
-<pre lang="js" class="notranslate"><code class="notranslate">if (window.innerWidth &gt;= 1250) {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://blog.liyifan.xyz/live2d/autoload.js';
-    document.body.appendChild(script);
-}
-</code></pre>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span> <span class="pl-c1">&gt;=</span> <span class="pl-c1">1250</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-k">var</span> <span class="pl-s1">script</span> <span class="pl-c1">=</span> <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">createElement</span><span class="pl-kos">(</span><span class="pl-s">'script'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-s1">script</span><span class="pl-kos">.</span><span class="pl-c1">type</span> <span class="pl-c1">=</span> <span class="pl-s">'text/javascript'</span><span class="pl-kos">;</span>
+    <span class="pl-s1">script</span><span class="pl-kos">.</span><span class="pl-c1">src</span> <span class="pl-c1">=</span> <span class="pl-s">'https://blog.liyifan.xyz/live2d/autoload.js'</span><span class="pl-kos">;</span>
+    <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">.</span><span class="pl-en">appendChild</span><span class="pl-kos">(</span><span class="pl-s1">script</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span></pre></div>
 <blockquote>
 <p>小屏显示效果不好，限制在1250以上<br>
 把脚本加入<code class="notranslate">body</code></p>
