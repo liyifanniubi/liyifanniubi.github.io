@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         /* 背景图片 */
         html {
-            background: url('https://img.liyifan.xyz/file/a2262c314f6a8bd592eba.jpg') no-repeat center center fixed;
+            background: url('https://img.154451.xyz/file/a2262c314f6a8bd592eba.jpg') no-repeat center center fixed;
             background-size: cover;
         }
         
