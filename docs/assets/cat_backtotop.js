@@ -1165,7 +1165,7 @@ document.addEventListener('DOMContentLoaded', function () {
           z-index: 2;
           width: 70px;
           height: 900px;
-          background: url(https://blog.liyifan.xyz/scroll.gif);
+          background: url(https://blog.154451.xyz/scroll.gif);
           transition: all .5s ease-in-out;
           opacity: 1;
       }
