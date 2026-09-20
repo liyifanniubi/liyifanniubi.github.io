@@ -47,6 +47,6 @@ export url='https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master' && sh -c "$
 2.添加自定义节点，规则，策略组
 3.安装web管理面板
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMCZyjBwK4pOQSclBKl2ioVEP8INnkAAqq-MRsZrElVLjkYvdYkmVwBAAMCAAN3AAM2BA" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.154451.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.154451.xyz/api/cfile/AgACAgUAAxkDAAMCZyjBwK4pOQSclBKl2ioVEP8INnkAAqq-MRsZrElVLjkYvdYkmVwBAAMCAAN3AAM2BA" alt="img" width="100%">`
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/api/cfile/AgACAgUAAxkDAAMDZyjDrwokLtSqCpLgDl8PYfJqfPkAArK-MRsZrElVe91rqqHDSzQBAAMCAAN4AAM2BA" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.154451.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.154451.xyz/api/cfile/AgACAgUAAxkDAAMDZyjDrwokLtSqCpLgDl8PYfJqfPkAArK-MRsZrElVe91rqqHDSzQBAAMCAAN4AAM2BA" alt="img" width="100%">`
