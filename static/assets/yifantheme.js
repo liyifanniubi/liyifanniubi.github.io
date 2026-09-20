@@ -107,8 +107,33 @@ document.addEventListener('DOMContentLoaded', function() {
         //主页主题------------------------------------------------------------------------------
         let style = document.createElement("style");
         style.innerHTML = `
+        #header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 8px;
+          border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));
+          margin-bottom: 16px;
+          gap: 16px;
+        }
         
+        .title-left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+        
+        .avatar.circle {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
 
+        .blogTitle {
+          font-family: fantasy;
+        }
         
         
         /* 背景图片 */
