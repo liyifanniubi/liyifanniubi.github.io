@@ -75,7 +75,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><p>有时候代码块很长，复制确实挺费劲，还容易漏行，所以折腾个一键复制。</p>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>使用<code class="notranslate">positon: absolute; top: 10px; right: 10px</code>定位按钮，发现在小屏设备上滑动代码块，按钮会跟着滑动，并不是一直悬停在右上角<br>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>使用<code class="notranslate">positon: absolute; top: 10px; right: 10px</code>定位按钮，发现在小屏设备上滑动代码块，按钮会跟着滑动，并不是一直悬停在右上角<br>
 不知道怎么让它悬停，只能用笨办法，监听代码块横向滚动事件，然后实时让<code class="notranslate">right</code>减去<code class="notranslate">滚动距离</code></p>
 </div>
 <div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-en">addEventListener</span><span class="pl-kos">(</span><span class="pl-s">"DOMContentLoaded"</span><span class="pl-kos">,</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
@@ -211,7 +211,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>单个</p>
 <pre class="notranslate"><code class="notranslate">&lt;!-- ##{"script":"&lt;script src='https://blog.liyifan.xyz/assets/copy.js'&gt;&lt;/script&gt;"}## --&gt;
 </code></pre>
-<p><img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/file/c4ddfdad8c40b84b9c9ca.jpg" alt="img" width="100%"></p></div>
+<p><img src="https://img.154451.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.154451.xyz/file/c4ddfdad8c40b84b9c9ca.jpg" alt="img" width="100%"></p></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -231,7 +231,7 @@ if("07/03/2024"!=""){
     var startSite=new Date("07/03/2024");
     var diff=now.getTime()-startSite.getTime();
     var diffDay=Math.floor(diff/(1000*60*60*24));
-    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
 }
 </script></div>
 </body>
@@ -251,6 +251,7 @@ document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 function openComments(){
     cm=document.getElementById("comments");
     cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
     cmButton.innerHTML="loading";
     span=document.createElement("span");
     span.setAttribute("class","AnimatedEllipsis");
