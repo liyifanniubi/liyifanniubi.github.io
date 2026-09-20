@@ -194,9 +194,9 @@ shell:startup
 
 ## 效果图
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/file/2cc80eb1d372209f79369.gif" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.154451.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.154451.xyz/file/2cc80eb1d372209f79369.gif" alt="img" width="100%">`
 
-`Gmeek-html<img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/file/e6c93445272961ac95054.png" alt="img" width="100%">`
+`Gmeek-html<img src="https://img.154451.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.154451.xyz/file/e6c93445272961ac95054.png" alt="img" width="100%">`
 
 
 

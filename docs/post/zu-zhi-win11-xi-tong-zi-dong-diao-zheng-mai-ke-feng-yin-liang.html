@@ -235,8 +235,8 @@ mic.exe</pre></div>
 </code></pre>
 <p>把<code class="notranslate">mic.bat</code>的快捷方式放入<code class="notranslate">startup</code>文件夹，实现开机自动静默启动</p>
 <h2>效果图</h2>
-<p><img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/file/2cc80eb1d372209f79369.gif" alt="img" width="100%"></p>
-<p><img src="https://img.liyifan.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.liyifan.xyz/file/e6c93445272961ac95054.png" alt="img" width="100%"></p></div>
+<p><img src="https://img.154451.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.154451.xyz/file/2cc80eb1d372209f79369.gif" alt="img" width="100%"></p>
+<p><img src="https://img.154451.xyz/file/2c0aba70ff4a96a5b06cd.png" data-src="https://img.154451.xyz/file/e6c93445272961ac95054.png" alt="img" width="100%"></p></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -256,7 +256,7 @@ if("07/03/2024"!=""){
     var startSite=new Date("07/03/2024");
     var diff=now.getTime()-startSite.getTime();
     var diffDay=Math.floor(diff/(1000*60*60*24));
-    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
 }
 </script></div>
 </body>
@@ -276,6 +276,7 @@ document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 function openComments(){
     cm=document.getElementById("comments");
     cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
     cmButton.innerHTML="loading";
     span=document.createElement("span");
     span.setAttribute("class","AnimatedEllipsis");
