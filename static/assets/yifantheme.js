@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             height: 340px;
         }
         
-        #header h1 {
+        .blogTitle {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
