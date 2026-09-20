@@ -108,41 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let style = document.createElement("style");
         style.innerHTML = `
         
-        /* header布局*/
-        .blogTitle {
-            display: unset;
-        }
+
         
-        #header {
-            height: 340px;
-        }
-        
-        .blogTitle {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .title-right {
-            margin: unset;
-            margin-top: 295px;
-            margin-left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .avatar {
-            width: 200px;
-            height: 200px;
-        }
-        
-        #header h1 a {
-            margin-top: 30px;
-            font-family: fantasy;
-            margin-left: unset;
-        }
         
         /* 背景图片 */
         html {
